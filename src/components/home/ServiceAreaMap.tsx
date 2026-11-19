@@ -1,0 +1,152 @@
+import React, { useState } from 'react';
+import { useNavigation } from '../../context/NavigationContext';
+import { SERVICE_AREAS, COMPANY_INFO } from '../../data/companyData';
+import { MapPin, Navigation, FileCheck, ArrowRight, ShieldCheck } from 'lucide-react';
+import { ServiceArea } from '../../types';
+
+export const ServiceAreaMap: React.FC = () => {
+  const { openQuoteModal } = useNavigation();
+  const [selectedArea, setSelectedArea] = useState<ServiceArea>(SERVICE_AREAS[0]); // Default to Bunker Hill Village
+
+  return (
+    <div className="bg-charcoal-900 border border-charcoal-700/80 rounded-sm shadow-elevated p-6 sm:p-10">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-charcoal-800 pb-6 mb-8">
+        <div>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="p-1.5 bg-copper/20 text-copper rounded border border-copper/30">
+              <MapPin className="w-4 h-4" />
+            </span>
+            <span className="text-xs font-mono uppercase tracking-widest text-copper">
+              Verified Regional Coverage
+            </span>
+          </div>
+          <h2 className="font-serif text-2xl sm:text-3xl text-ivory font-bold">
+            Interactive Houston Service Area & Municipal Permitting Map
+          </h2>
+          <p className="text-xs sm:text-sm text-stone-400 mt-1 max-w-2xl">
+            Operating from our central Knight St sheet metal facility, Jay-Co provides high-wind engineered roofing and architectural fabrication across Houston's premier residential enclaves.
+          </p>
+        </div>
+        <div className="text-right hidden md:block">
+          <span className="text-xs text-stone-400 block font-mono">Central Shop Anchor</span>
+          <span className="text-xs text-copper font-medium">2307 Knight St, Houston, TX 77093</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Left: Interactive District Selector / Visual Map (7 Cols) */}
+        <div className="lg:col-span-7 space-y-4">
+          <div className="relative w-full h-[360px] sm:h-[420px] bg-charcoal-950 border border-charcoal-800 rounded p-4 flex flex-col justify-between overflow-hidden">
+            {/* Visual Schematic Grid of Houston Metro */}
+            <div className="absolute inset-0 opacity-15 pointer-events-none">
+              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#C68642" strokeWidth="0.5"/>
+                  </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+                {/* Loop 610 / Beltway 8 stylized rings */}
+                <circle cx="50%" cy="50%" r="90" fill="none" stroke="#C68642" strokeWidth="1" strokeDasharray="4 4" />
+                <circle cx="50%" cy="50%" r="160" fill="none" stroke="#C68642" strokeWidth="1" strokeDasharray="6 6" />
+              </svg>
+            </div>
+
+            {/* Central Shop Anchor Pin */}
+            <div className="absolute top-[28%] left-[55%] -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none text-center">
+              <div className="w-8 h-8 rounded-full bg-copper text-charcoal-950 font-bold flex items-center justify-center mx-auto shadow-copper border-2 border-ivory animate-bounce">
+                <Navigation className="w-4 h-4" />
+              </div>
+              <span className="bg-charcoal-950 text-copper border border-copper/50 text-[10px] font-mono px-2 py-0.5 rounded shadow mt-1 inline-block whitespace-nowrap">
+                Jay-Co Shop (2307 Knight St)
+              </span>
+            </div>
+
+            {/* District Interactive Pins */}
+            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2">
+              {SERVICE_AREAS.map(area => {
+                const isSelected = selectedArea.name === area.name;
+                const isBunkerHill = area.name.includes('Bunker Hill');
+                return (
+                  <button
+                    key={area.name}
+                    onClick={() => setSelectedArea(area)}
+                    className={`p-2.5 rounded text-left transition-all border ${
+                      isSelected
+                        ? 'bg-charcoal-850 border-copper shadow-copper text-ivory'
+                        : 'bg-charcoal-900/90 border-charcoal-700/80 hover:border-stone-500 text-stone-300'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs font-serif font-bold text-ivory truncate">{area.name}</span>
+                      {isBunkerHill && (
+                        <FileCheck className="w-3.5 h-3.5 text-copper flex-shrink-0" title="Permit Documented" />
+                      )}
+                    </div>
+                    <span className="text-[10px] text-stone-400 block font-mono">{area.zipCodes.join(', ')}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-0 text-[11px] font-mono text-stone-400 pt-3 border-t border-charcoal-800 bg-charcoal-950/80 px-2.5 py-1 rounded">
+              <span className="flex items-center gap-1.5 text-copper">
+                <FileCheck className="w-3.5 h-3.5 flex-shrink-0" />
+                <span>Bunker Hill Village Permit #20220639 on File</span>
+              </span>
+              <span className="text-[10px] text-stone-500">Harris County Code Jurisdiction</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Selected District Intelligence Card (5 Cols) */}
+        <div className="lg:col-span-5">
+          <div className="bg-charcoal-950 border border-charcoal-700/80 rounded p-6 sm:p-8 space-y-5">
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-mono uppercase tracking-widest text-copper">
+                  {selectedArea.region}
+                </span>
+                <span className="text-xs font-mono text-stone-400">
+                  {selectedArea.distanceFromShop}
+                </span>
+              </div>
+              <h3 className="font-serif text-2xl font-bold text-ivory">
+                {selectedArea.name}
+              </h3>
+              <p className="text-xs text-stone-400 font-mono mt-0.5">
+                ZIP Codes: {selectedArea.zipCodes.join(', ')}
+              </p>
+            </div>
+
+            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed border-t border-charcoal-800 pt-3">
+              {selectedArea.description}
+            </p>
+
+            <div className="space-y-2 text-xs bg-charcoal-900 p-3.5 rounded border border-charcoal-800">
+              <div className="flex justify-between border-b border-charcoal-800/80 pb-1.5">
+                <span className="text-stone-400">Verification Status:</span>
+                <span className="text-copper font-medium">{selectedArea.verifiedProjectsCount}</span>
+              </div>
+              <div className="pt-1">
+                <span className="text-stone-400 block mb-1">Architectural Context:</span>
+                <span className="text-stone-300">{selectedArea.notableArchitecture}</span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => openQuoteModal({
+                service: `Roofing & Metalwork Consultation for ${selectedArea.name}`,
+                estimatedCostRange: `Location: ${selectedArea.name} (${selectedArea.zipCodes[0]})`
+              })}
+              className="w-full bg-copper hover:bg-copper-light text-charcoal-950 font-bold py-3 px-6 rounded-sm shadow-copper text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5"
+            >
+              <span>Consult On {selectedArea.name} Project</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
