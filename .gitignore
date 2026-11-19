@@ -19,7 +19,8 @@ dist-ssr/
 server.js
 test-server.js
 leads.json
-data/
+/data/
+!src/data/
 
 # Internal QA automation, browser profiles & test scripts
 scripts/
