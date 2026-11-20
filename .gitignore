@@ -31,7 +31,7 @@ reality-verification-results.json
 .chrome-mobile-profile/
 public/test-screenshots/
 
-# Internal audit reports (keeping README.md and Phase 2 reports for frontend repo)
+# Internal audit reports (keeping README.md and QA audit reports for frontend repo)
 *.md
 !README.md
 !LUXURY_REDESIGN_IMPLEMENTATION_REPORT.md
@@ -40,6 +40,12 @@ public/test-screenshots/
 !FINAL_REGRESSION_REPORT.md
 !ENVIRONMENT_DIAGNOSTICS_REPORT.md
 !BEFORE_REDESIGN_INSPECTION.md
+!LIVE_DEPLOYMENT_VERIFICATION.md
+!DEEP_VISUAL_AUDIT_REPORT.md
+!ANIMATION_PERFORMANCE_AUDIT.md
+!MOBILE_EXPERIENCE_AUDIT.md
+!FUNCTIONAL_REGRESSION_AUDIT.md
+!FINAL_PHASE_3_QA_REPORT.md
 
 # OS & Editor artifacts
 .DS_Store
