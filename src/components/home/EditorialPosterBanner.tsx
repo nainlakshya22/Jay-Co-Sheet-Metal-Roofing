@@ -1,45 +1,33 @@
 import React from 'react';
 import { useNavigation } from '../../context/NavigationContext';
-import { ArrowRight, Sparkles, Compass, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Hammer, Layers, Award } from 'lucide-react';
 
 export const EditorialPosterBanner: React.FC = () => {
   const { openQuoteModal, navigateTo } = useNavigation();
 
-  const COLOR_PALETTE_SWATCHES = [
+  const ARCHITECTURAL_PILLARS = [
     {
-      role: 'PRIMARY',
-      name: 'MOCHA BROWN',
-      hex: '#5B4632',
-      bgClass: 'bg-[#5B4632]',
-      borderClass: 'border-[#5B4632]',
-      textColor: 'text-ivory',
-      hexColor: 'text-[#E2D9CB]',
-      desc: 'Deep architectural warmth & estate masonry anchor'
+      icon: Hammer,
+      title: 'In-Shop CNC Brake',
+      subtitle: 'Custom Fabrication',
+      desc: 'Precision double-lock standing seams, custom dormers, and radiused flashings formed in-house.'
     },
     {
-      role: 'SECONDARY',
-      name: 'CHAMPAGNE GOLD',
-      hex: '#F4D9A0',
-      bgClass: 'bg-[#F4D9A0]',
-      borderClass: 'border-[#F4D9A0]',
-      textColor: 'text-mocha-950',
-      hexColor: 'text-mocha-900',
-      desc: 'Cinematic sunlight, fine borders & editorial typography'
+      icon: Layers,
+      title: '16-oz Copper & 24ga Steel',
+      subtitle: 'Architectural Alloys',
+      desc: 'Cold-rolled solid copper, VMZinc, and Kynar 500® PVDF-coated steel built for multi-decade life.'
     },
     {
-      role: 'ACCENT',
-      name: 'BURNT AMBER',
-      hex: '#C8792C',
-      bgClass: 'bg-[#C8792C]',
-      borderClass: 'border-[#C8792C]',
-      textColor: 'text-ivory',
-      hexColor: 'text-[#FBF3E0]',
-      desc: 'Radiant copper glow & high-conversion interactive elements'
+      icon: Award,
+      title: '140+ MPH Wind Rating',
+      subtitle: 'Engineered Anchoring',
+      desc: 'Concealed thermal clip systems engineered to meet Texas Department of Insurance windstorm codes.'
     }
   ];
 
   return (
-    <section className="relative py-24 lg:py-36 bg-mocha-950 overflow-hidden border-y border-mocha-800">
+    <section className="relative py-24 lg:py-32 bg-mocha-950 overflow-hidden border-y border-mocha-800">
       {/* Cinematic Golden Light Sweep & Radial Ambient Atmosphere */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[500px] bg-gold/10 rounded-full blur-[140px] animate-ambient-glow" />
@@ -94,44 +82,34 @@ export const EditorialPosterBanner: React.FC = () => {
               Hand-fabricated custom metalwork shaped on heavy mechanical brakes inside our 2307 Knight Street facility. From 16-ounce cold-rolled copper dormers and standing seam roofing to bespoke chimney shrouds, every piece is sculpted to withstand Gulf Coast weather while elevating luxury estates to museum-grade beauty.
             </p>
 
-            {/* Three-Color Luxury Palette Swatches (Modeled directly after the reference cards) */}
-            <div className="pt-2">
-              <h4 className="text-xs font-mono uppercase tracking-widest text-gold mb-4 flex items-center gap-2">
-                <Compass className="w-3.5 h-3.5 text-amber" />
-                <span>Curated Luxury Palette • Exact HEX Values</span>
-              </h4>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {COLOR_PALETTE_SWATCHES.map((swatch) => (
-                  <div 
-                    key={swatch.hex}
-                    className="rounded-xl overflow-hidden bg-mocha-900/90 border border-mocha-800 hover:border-gold/50 shadow-luxury transition-all duration-300 group hover:-translate-y-1"
+            {/* Architectural Craftsmanship Standards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+              {ARCHITECTURAL_PILLARS.map((pillar) => {
+                const IconComponent = pillar.icon;
+                return (
+                  <div
+                    key={pillar.title}
+                    className="p-4 rounded-xl bg-mocha-900/90 border border-mocha-800 hover:border-gold/50 shadow-luxury transition-all duration-300 group hover:-translate-y-0.5"
                   >
-                    {/* Visual Color Block */}
-                    <div className={`h-24 ${swatch.bgClass} flex flex-col justify-end p-3 relative overflow-hidden`}>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                      <span className={`relative text-[10px] font-mono uppercase tracking-widest font-semibold ${swatch.textColor} opacity-90`}>
-                        {swatch.role}
-                      </span>
+                    <div className="w-8 h-8 rounded-lg bg-mocha-850 border border-gold/30 flex items-center justify-center mb-3 text-gold group-hover:text-amber transition-colors">
+                      <IconComponent className="w-4 h-4" />
                     </div>
-
-                    {/* Card Label & Exact Hex Code */}
-                    <div className="p-3.5 space-y-1 bg-mocha-900">
-                      <span className="font-serif font-bold text-sm tracking-wide text-ivory block group-hover:text-gold transition-colors">
-                        {swatch.name}
-                      </span>
-                      <div className="flex items-center justify-between font-mono text-xs pt-1 border-t border-mocha-800">
-                        <span className="text-gold font-bold">{swatch.hex}</span>
-                        <span className="text-[10px] text-stone-400 uppercase">HEX Code</span>
-                      </div>
-                    </div>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-amber block mb-1">
+                      {pillar.subtitle}
+                    </span>
+                    <h4 className="font-serif font-bold text-sm text-ivory group-hover:text-gold transition-colors mb-1.5 leading-snug">
+                      {pillar.title}
+                    </h4>
+                    <p className="text-[11px] text-stone-400 leading-relaxed font-sans">
+                      {pillar.desc}
+                    </p>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
 
             {/* Editorial CTAs */}
-            <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
               <button
                 onClick={() => openQuoteModal({ service: 'Architectural Sheet Metal Fabrication' })}
                 className="w-full sm:w-auto amber-button-glow font-bold px-8 py-4 rounded-sm text-xs uppercase tracking-widest flex items-center justify-center gap-2.5 relative-shimmer group"
