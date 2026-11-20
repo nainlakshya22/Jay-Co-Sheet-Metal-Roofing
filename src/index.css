@@ -3,42 +3,75 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* LUXURY THREE-COLOR SYSTEM DESIGN TOKENS */
+    --color-mocha-primary: #5B4632;
+    --color-mocha-950: #120E0B;
+    --color-mocha-900: #1C1612;
+    --color-mocha-850: #251E19;
+    --color-mocha-800: #362B23;
+    --color-mocha-700: #4A3B30;
+
+    --color-gold-secondary: #F4D9A0;
+    --color-gold-light: #FBF3E0;
+    --color-gold-muted: #D8BC7C;
+    --color-gold-dark: #B3924B;
+    --color-gold-glow: rgba(244, 217, 160, 0.22);
+    --color-gold-ambient: rgba(244, 217, 160, 0.08);
+
+    --color-amber-accent: #C8792C;
+    --color-amber-light: #E08B38;
+    --color-amber-dark: #9E5919;
+    --color-amber-glow: rgba(200, 121, 44, 0.35);
+
+    --color-ivory: #FAF7F2;
+    --color-ivory-muted: #E2D9CB;
+
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
   html {
     color-scheme: dark;
+    scroll-behavior: smooth;
   }
   
   body {
-    background-color: #0B0D0E;
-    color: #DFDAD1;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--color-mocha-950);
+    color: var(--color-ivory-muted);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, .font-serif {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-serif);
+    letter-spacing: -0.015em;
   }
 
   code, pre, .font-mono {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
   }
 }
 
-/* Custom Scrollbar */
+/* Custom Luxury Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0D0E;
+  background: #120E0B;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2A313A;
+  background: #362B23;
   border-radius: 4px;
+  border: 1px solid rgba(244, 217, 160, 0.15);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C68642;
+  background: #5B4632;
 }
 
 /* Utilities */
@@ -50,10 +83,134 @@
   scrollbar-width: none;
 }
 
+/* -------------------------------------------------------------------------
+   ADVANCED CINEMATIC LIGHTING & MOTION ANIMATIONS
+   ------------------------------------------------------------------------- */
+
+/* A. Ambient Background Glow Pulse */
+@keyframes ambientGlowPulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+.animate-ambient-glow {
+  animation: ambientGlowPulse 8s ease-in-out infinite;
+}
+
+/* B. Sparkling Floating Gold Particles */
+@keyframes particleFloat1 {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0.9;
+    transform: translateY(-40px) translateX(12px) scale(1.1);
+  }
+  100% {
+    transform: translateY(-80px) translateX(-8px) scale(0.6);
+    opacity: 0;
+  }
+}
+
+@keyframes particleFloat2 {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0.7);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.85;
+    transform: translateY(-50px) translateX(-15px) scale(1.2);
+  }
+  100% {
+    transform: translateY(-90px) translateX(10px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-particle-1 {
+  animation: particleFloat1 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-particle-2 {
+  animation: particleFloat2 7.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 1.5s;
+}
+
+.animate-particle-3 {
+  animation: particleFloat1 8.5s cubic-bezier(0.4, 0, 0.2, 1) infinite 3s;
+}
+
+/* C. Controlled Metallic Shimmer Reflection */
+@keyframes metallicShimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  40%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.relative-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.relative-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(244, 217, 160, 0.22) 50%,
+    transparent 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+}
+
+.relative-shimmer:hover::after {
+  animation: metallicShimmer 1.8s ease-in-out infinite;
+}
+
+.active-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(244, 217, 160, 0.18) 50%,
+    transparent 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+  animation: metallicShimmer 6s ease-in-out infinite;
+}
+
+/* D. Smooth Fade In & Up */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -62,5 +219,52 @@
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* E. Gold Edge Light Glow */
+.gold-border-glow {
+  border: 1px solid rgba(244, 217, 160, 0.35);
+  transition: all 0.35s ease;
+}
+
+.gold-border-glow:hover {
+  border-color: rgba(244, 217, 160, 0.8);
+  box-shadow: 0 0 20px -3px rgba(244, 217, 160, 0.25);
+}
+
+.amber-button-glow {
+  background: #C8792C;
+  color: #120E0B;
+  box-shadow: 0 10px 25px -8px rgba(200, 121, 44, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.amber-button-glow:hover {
+  background: #E08B38;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -8px rgba(200, 121, 44, 0.6);
+}
+
+.amber-button-glow:active {
+  transform: translateY(0);
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-ambient-glow,
+  .animate-particle-1,
+  .animate-particle-2,
+  .animate-particle-3,
+  .active-shimmer::after,
+  .relative-shimmer::after {
+    animation: none !important;
+    display: none !important;
+  }
 }

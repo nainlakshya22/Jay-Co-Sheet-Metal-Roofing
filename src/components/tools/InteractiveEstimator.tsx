@@ -117,14 +117,14 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
   };
 
   return (
-    <div className="bg-charcoal-900 border border-charcoal-700/90 rounded-sm shadow-elevated p-6 sm:p-10">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-charcoal-800 pb-6 mb-8">
+    <div className="bg-mocha-900 border border-gold/30 rounded-sm shadow-luxury p-6 sm:p-10">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-mocha-800 pb-6 mb-8">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="p-1.5 bg-copper/20 text-copper rounded border border-copper/30">
-              <Calculator className="w-4 h-4" />
+            <span className="p-1.5 bg-mocha-850 text-gold rounded border border-gold/30">
+              <Calculator className="w-4 h-4 text-amber" />
             </span>
-            <span className="text-xs font-mono uppercase tracking-widest text-copper">
+            <span className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
               Interactive Planning Calculator
             </span>
           </div>
@@ -137,7 +137,7 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
             id="estimator-reset-btn"
             onClick={resetDefaults}
             type="button"
-            className="flex items-center gap-1.5 text-xs text-stone-400 hover:text-copper bg-charcoal-800 hover:bg-charcoal-750 border border-charcoal-700 px-3 py-1.5 rounded transition-colors font-mono"
+            className="flex items-center gap-1.5 text-xs text-stone-300 hover:text-gold bg-mocha-850 hover:bg-mocha-800 border border-mocha-700 px-3 py-1.5 rounded transition-colors font-mono"
             title="Reset calculator inputs to default parameters"
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -145,7 +145,7 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
           </button>
           <div className="text-right hidden md:block">
             <span className="text-xs text-stone-400 block font-mono">Houston Regional Benchmark</span>
-            <span className="text-xs text-copper font-medium">GAF Certified™ Contractor #1132527</span>
+            <span className="text-xs text-gold font-medium">GAF Certified™ Contractor #1132527</span>
           </div>
         </div>
       </div>
@@ -172,7 +172,7 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
                     const val = Number(e.target.value);
                     setSqFt(val);
                   }}
-                  className="font-mono text-sm font-bold text-copper bg-charcoal-800 px-2.5 py-1 rounded border border-copper/40 w-28 text-right focus:outline-none focus:border-copper"
+                  className="font-mono text-sm font-bold text-gold bg-mocha-950 px-2.5 py-1 rounded-md border border-gold/40 w-28 text-right focus:outline-none focus:border-gold"
                 />
                 <span className="text-xs font-mono text-stone-400">sq. ft.</span>
               </div>
@@ -185,7 +185,7 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
               step="100"
               value={sqFt}
               onChange={e => setSqFt(Number(e.target.value))}
-              className="w-full h-2 bg-charcoal-800 rounded-lg appearance-none cursor-pointer accent-copper"
+              className="w-full h-2 bg-mocha-950 rounded-lg appearance-none cursor-pointer accent-amber"
             />
             <div className="flex justify-between text-[11px] text-stone-500 font-mono mt-1">
               <span>1,000 sq ft</span>
@@ -212,13 +212,13 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
                     setPitchMultiplier(p.mult);
                     setPitchName(p.name);
                   }}
-                  className={`p-3 text-xs rounded border text-left transition-all ${
+                  className={`p-3 text-xs rounded-lg border text-left transition-all ${
                     pitchMultiplier === p.mult
-                      ? 'bg-charcoal-800 border-copper text-copper font-semibold shadow-copper'
-                      : 'bg-charcoal-850 border-charcoal-700/80 text-stone-300 hover:border-stone-500'
+                      ? 'bg-mocha-800 border-gold text-gold font-semibold shadow-gold-sm'
+                      : 'bg-mocha-950 border-mocha-800 text-stone-300 hover:border-gold/30'
                   }`}
                 >
-                  <span className="block font-medium text-ivory mb-0.5">{p.label}</span>
+                  <span className="block font-medium text-gold-100 mb-0.5">{p.label}</span>
                   <span className="text-[10px] text-stone-400 block">{p.name}</span>
                 </button>
               ))}
@@ -243,10 +243,10 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
                     setStoriesMultiplier(s.mult);
                     setStoriesName(s.name);
                   }}
-                  className={`p-2.5 text-xs rounded border text-center transition-all ${
+                  className={`p-2.5 text-xs rounded-lg border text-center transition-all ${
                     storiesMultiplier === s.mult
-                      ? 'bg-charcoal-800 border-copper text-copper font-semibold'
-                      : 'bg-charcoal-850 border-charcoal-700/80 text-stone-300 hover:border-stone-500'
+                      ? 'bg-mocha-800 border-gold text-gold font-semibold'
+                      : 'bg-mocha-950 border-mocha-800 text-stone-300 hover:border-gold/30'
                   }`}
                 >
                   {s.label}
@@ -266,16 +266,16 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
                   type="button"
                   key={m.id}
                   onClick={() => setSelectedMaterialId(m.id)}
-                  className={`w-full p-3.5 rounded border text-left transition-all flex items-start justify-between gap-3 ${
+                  className={`w-full p-3.5 rounded-lg border text-left transition-all flex items-start justify-between gap-3 ${
                     selectedMaterialId === m.id
-                      ? 'bg-charcoal-800 border-copper shadow-copper'
-                      : 'bg-charcoal-850 border-charcoal-700/80 hover:border-stone-500'
+                      ? 'bg-mocha-800 border-gold shadow-gold-sm'
+                      : 'bg-mocha-950 border-mocha-800 hover:border-gold/30'
                   }`}
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="font-serif font-bold text-sm text-ivory">{m.name}</span>
-                      <span className="text-[10px] bg-charcoal-900 text-copper px-2 py-0.5 rounded font-mono border border-copper/20">
+                      <span className="font-serif font-bold text-sm text-gold-100">{m.name}</span>
+                      <span className="text-[10px] bg-mocha-950 text-gold px-2 py-0.5 rounded font-mono border border-gold/20">
                         {m.tier}
                       </span>
                     </div>
@@ -298,13 +298,13 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
 
         {/* Right Output: Dynamic Calculation Display (5 Cols) */}
         <div className="lg:col-span-5 flex flex-col justify-between">
-          <div className="bg-charcoal-950 border border-charcoal-700/80 rounded p-6 sm:p-8 space-y-6">
+          <div className="bg-mocha-950 border border-gold/40 rounded p-6 sm:p-8 space-y-6 shadow-luxury">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-stone-400 block mb-1">
                 Estimated Planning Range
               </span>
               <div className="flex flex-wrap items-baseline gap-2">
-                <span id="estimator-min-price" className="font-serif text-2xl sm:text-4xl font-bold text-copper">
+                <span id="estimator-min-price" className="font-serif text-2xl sm:text-4xl font-bold text-gold">
                   ${calculations.minFormatted}
                 </span>
                 <span className="text-stone-400 font-serif text-xl sm:text-2xl">–</span>
@@ -318,7 +318,7 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
             </div>
 
             {/* Parameter Summary */}
-            <div className="space-y-2 text-xs border-t border-b border-charcoal-800 py-4">
+            <div className="space-y-2 text-xs border-t border-b border-mocha-800 py-4">
               <div className="flex justify-between">
                 <span className="text-stone-400">Selected Material:</span>
                 <span className="text-ivory font-medium text-right max-w-[200px] truncate">
@@ -339,13 +339,13 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
               </div>
               <div className="flex justify-between">
                 <span className="text-stone-400">Shop Flashing:</span>
-                <span className="text-copper font-medium">Knight St In-House Brake Fabricated</span>
+                <span className="text-gold font-medium">Knight St In-House Brake Fabricated</span>
               </div>
             </div>
 
             {/* Compulsory Disclaimer */}
-            <div className="bg-charcoal-900 border border-amber-500/30 p-3.5 rounded text-xs text-stone-400 space-y-1.5 leading-relaxed">
-              <div className="flex items-center gap-1.5 text-amber-400 font-semibold uppercase tracking-wider text-xs">
+            <div className="bg-mocha-900 border border-amber/30 p-3.5 rounded text-xs text-stone-300 space-y-1.5 leading-relaxed">
+              <div className="flex items-center gap-1.5 text-amber font-semibold uppercase tracking-wider text-xs">
                 <ShieldAlert className="w-3.5 h-3.5 flex-shrink-0" />
                 <span>Illustrative Planning Basis Only</span>
               </div>
@@ -357,17 +357,17 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
             {/* Direct CTA */}
             <button
               onClick={handleTransferToQuote}
-              className="w-full bg-copper hover:bg-copper-light text-charcoal-950 font-bold py-3.5 px-6 rounded-sm shadow-copper text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5"
+              className="w-full amber-button-glow font-bold py-3.5 px-6 rounded-sm text-xs uppercase tracking-wider flex items-center justify-center gap-2 relative-shimmer group"
             >
               <span>Transfer to Detailed Quote Request</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-mocha-950 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
 
           <div className="mt-4 text-center">
-            <span className="text-xs text-stone-500">
+            <span className="text-xs text-stone-400">
               Prefer speaking directly with an estimator? Call{' '}
-              <a href={`tel:${COMPANY_INFO.phone}`} className="text-copper font-semibold hover:underline">
+              <a href={`tel:${COMPANY_INFO.phone}`} className="text-gold font-semibold hover:underline">
                 {COMPANY_INFO.phoneFormatted}
               </a>
             </span>

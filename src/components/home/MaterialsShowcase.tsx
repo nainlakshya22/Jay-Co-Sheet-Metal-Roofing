@@ -98,48 +98,51 @@ export const MaterialsShowcase: React.FC = () => {
   const activeMaterial = MATERIAL_TABS.find(t => t.id === activeTabId) || MATERIAL_TABS[0];
 
   return (
-    <section className="py-20 lg:py-28 bg-charcoal-900 border-t border-charcoal-800 text-stone-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <section className="py-20 lg:py-28 bg-mocha-950 border-t border-mocha-800 text-stone-300 relative overflow-hidden">
+      {/* Subtle Atmospheric Gold Glow */}
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-gold/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-charcoal-800 pb-6 mb-10">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-mocha-800 pb-6 mb-10">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="p-1.5 bg-copper/20 text-copper rounded border border-copper/30">
-                <Layers className="w-4 h-4" />
+              <span className="p-1.5 bg-mocha-900 text-gold rounded border border-gold/30">
+                <Layers className="w-4 h-4 text-amber" />
               </span>
-              <span className="text-xs font-mono uppercase tracking-widest text-copper">
+              <span className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
                 Architectural Metallurgy
               </span>
             </div>
             <h2 className="font-serif text-2xl sm:text-4xl text-ivory font-bold">
               Premium Roofing & Metal Materials Showcase
             </h2>
-            <p className="text-xs sm:text-sm text-stone-400 mt-1 max-w-2xl">
+            <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-2xl">
               Inspect the engineering specifications, chemical compositions, and Gulf Coast wind ratings of our core architectural materials.
             </p>
           </div>
 
           <button
             onClick={() => navigateTo('materials')}
-            className="text-stone-300 hover:text-copper text-xs uppercase tracking-wider font-semibold transition-colors"
+            className="text-gold-light hover:text-gold text-xs uppercase tracking-wider font-semibold transition-colors border border-gold/30 px-3.5 py-2 rounded bg-mocha-900"
           >
             Explore Full Metallurgy Guide →
           </button>
         </div>
 
         {/* Material Selection Tabs */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
           {MATERIAL_TABS.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTabId(tab.id)}
-              className={`p-4 rounded text-left border transition-all ${
+              className={`p-4 rounded text-left border transition-all duration-300 ${
                 activeTabId === tab.id
-                  ? 'bg-charcoal-800 border-copper shadow-copper'
-                  : 'bg-charcoal-950 border-charcoal-800 hover:border-stone-600'
+                  ? 'bg-mocha-850 border-gold shadow-gold text-ivory'
+                  : 'bg-mocha-900 border-mocha-800 hover:border-gold/40 text-stone-300'
               }`}
             >
-              <span className="text-[10px] font-mono text-copper uppercase block mb-1">
+              <span className="text-[10px] font-mono text-gold uppercase block mb-1">
                 {tab.category}
               </span>
               <h4 className="font-serif font-bold text-sm text-ivory truncate">{tab.name}</h4>
@@ -149,25 +152,25 @@ export const MaterialsShowcase: React.FC = () => {
         </div>
 
         {/* Selected Material Deep Dive Card */}
-        <div className="bg-charcoal-950 border border-charcoal-800 rounded p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-mocha-900 border border-gold/30 rounded p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-luxury">
           {/* Material Image */}
-          <div className="lg:col-span-5 relative rounded overflow-hidden border border-charcoal-800 h-80 sm:h-96">
+          <div className="lg:col-span-5 relative rounded overflow-hidden border border-mocha-800 h-80 sm:h-96 group">
             <img
               src={activeMaterial.image}
               alt={activeMaterial.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 bg-charcoal-900/90 backdrop-blur-md p-3 rounded border border-charcoal-700">
+            <div className="absolute inset-0 bg-gradient-to-t from-mocha-950 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 bg-mocha-950/90 backdrop-blur-md p-3 rounded border border-gold/30">
               <span className="text-xs font-serif font-bold text-ivory block">{activeMaterial.name}</span>
-              <span className="text-[11px] text-copper font-mono">{activeMaterial.gauge}</span>
+              <span className="text-[11px] text-gold font-mono">{activeMaterial.gauge}</span>
             </div>
           </div>
 
           {/* Material Specifications & Performance */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-copper">
+              <span className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
                 {activeMaterial.category}
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl text-ivory font-bold mt-1">
@@ -179,24 +182,24 @@ export const MaterialsShowcase: React.FC = () => {
             </div>
 
             {/* Quick Metrics */}
-            <div className="grid grid-cols-3 gap-3 text-xs bg-charcoal-900 p-3.5 rounded border border-charcoal-800 font-mono">
+            <div className="grid grid-cols-3 gap-3 text-xs bg-mocha-950 p-3.5 rounded border border-mocha-800 font-mono">
               <div>
-                <span className="text-stone-500 block text-[10px]">LIFESPAN</span>
-                <span className="text-copper font-bold">{activeMaterial.lifespan}</span>
+                <span className="text-stone-400 block text-[10px]">LIFESPAN</span>
+                <span className="text-gold font-bold">{activeMaterial.lifespan}</span>
               </div>
               <div>
-                <span className="text-stone-500 block text-[10px]">WIND RATING</span>
+                <span className="text-stone-400 block text-[10px]">WIND RATING</span>
                 <span className="text-ivory font-bold">{activeMaterial.windRating}</span>
               </div>
               <div>
-                <span className="text-stone-500 block text-[10px]">FIRE RATING</span>
+                <span className="text-stone-400 block text-[10px]">FIRE RATING</span>
                 <span className="text-emerald-400 font-bold">{activeMaterial.fireRating}</span>
               </div>
             </div>
 
             {/* Houston Climate Advantage */}
-            <div className="p-3.5 bg-charcoal-900/80 border-l-2 border-copper rounded-r text-xs text-stone-300 space-y-1">
-              <strong className="text-copper block font-mono text-[11px] uppercase tracking-wider">
+            <div className="p-3.5 bg-mocha-950/80 border-l-2 border-amber rounded-r text-xs text-stone-300 space-y-1">
+              <strong className="text-gold block font-mono text-[11px] uppercase tracking-wider">
                 Houston Climate Engineering Consideration:
               </strong>
               <p>{activeMaterial.houstonAdvantage}</p>
@@ -205,9 +208,9 @@ export const MaterialsShowcase: React.FC = () => {
             {/* Technical Specs 2x2 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
               {activeMaterial.specs.map(s => (
-                <div key={s.label} className="p-2.5 bg-charcoal-900 rounded border border-charcoal-800 flex justify-between">
+                <div key={s.label} className="p-2.5 bg-mocha-950 rounded border border-mocha-800 flex justify-between">
                   <span className="text-stone-400">{s.label}:</span>
-                  <span className="text-ivory font-mono font-medium">{s.value}</span>
+                  <span className="text-gold-light font-mono font-medium">{s.value}</span>
                 </div>
               ))}
             </div>
@@ -216,10 +219,10 @@ export const MaterialsShowcase: React.FC = () => {
             <div className="pt-2">
               <button
                 onClick={() => openQuoteModal({ material: activeMaterial.name })}
-                className="bg-copper hover:bg-copper-light text-charcoal-950 font-bold px-6 py-3 rounded-sm shadow-copper text-xs uppercase tracking-wider transition-all inline-flex items-center gap-2"
+                className="amber-button-glow font-bold px-6 py-3 rounded-sm text-xs uppercase tracking-wider inline-flex items-center gap-2 relative-shimmer group"
               >
                 <span>Request Sample & Specification Quote</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-mocha-950 transition-transform group-hover:translate-x-1" />
               </button>
             </div>
           </div>

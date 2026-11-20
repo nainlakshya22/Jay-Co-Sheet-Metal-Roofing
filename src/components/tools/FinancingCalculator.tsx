@@ -39,24 +39,24 @@ export const FinancingCalculator: React.FC = () => {
   }, [projectAmount, downPaymentPercent, loanTermMonths, interestRateAPR]);
 
   return (
-    <div className="bg-charcoal-900 border border-charcoal-700/80 rounded-sm shadow-elevated p-6 sm:p-10">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-charcoal-800 pb-6 mb-8">
+    <div className="bg-mocha-900/90 border border-gold/30 rounded-xl shadow-2xl p-6 sm:p-10 backdrop-blur-md">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-mocha-800/80 pb-6 mb-8">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="p-1.5 bg-copper/20 text-copper rounded border border-copper/30">
-              <DollarSign className="w-4 h-4" />
+            <span className="p-1.5 bg-gold/15 text-gold rounded border border-gold/30">
+              <DollarSign className="w-4 h-4 text-amber" />
             </span>
-            <span className="text-xs font-mono uppercase tracking-widest text-copper">
+            <span className="text-xs font-mono uppercase tracking-widest text-gold">
               Financial Budgeting Tool
             </span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-3xl text-ivory font-bold">
+          <h2 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold">
             Roofing Investment & Monthly Payment Calculator
           </h2>
         </div>
         <div className="text-right hidden md:block">
           <span className="text-xs text-stone-400 block font-mono">Illustrative Amortization</span>
-          <span className="text-xs text-copper font-medium">Clear Budget Transparency</span>
+          <span className="text-xs text-gold font-medium">Clear Budget Transparency</span>
         </div>
       </div>
 
@@ -69,7 +69,7 @@ export const FinancingCalculator: React.FC = () => {
               <label className="text-xs font-mono uppercase tracking-wider text-stone-300">
                 Estimated Project Scope / Investment
               </label>
-              <span className="font-mono text-base font-bold text-copper bg-charcoal-800 px-3 py-1 rounded border border-copper/30">
+              <span className="font-mono text-base font-bold text-gold-100 bg-mocha-950 px-3 py-1 rounded border border-gold/30">
                 ${projectAmount.toLocaleString()}
               </span>
             </div>
@@ -80,7 +80,7 @@ export const FinancingCalculator: React.FC = () => {
               step="1000"
               value={projectAmount}
               onChange={e => setProjectAmount(Number(e.target.value))}
-              className="w-full h-2 bg-charcoal-800 rounded-lg appearance-none cursor-pointer accent-copper"
+              className="w-full h-2 bg-mocha-950 rounded-lg appearance-none cursor-pointer accent-amber"
             />
             <div className="flex justify-between text-[11px] text-stone-500 font-mono mt-1">
               <span>$10,000 (Shingle Re-Roof)</span>
@@ -103,8 +103,8 @@ export const FinancingCalculator: React.FC = () => {
                     onClick={() => setDownPaymentPercent(pct)}
                     className={`min-h-[38px] px-3 py-1.5 text-xs rounded font-mono border flex items-center justify-center transition-all ${
                       downPaymentPercent === pct
-                        ? 'bg-charcoal-800 border-copper text-copper font-bold'
-                        : 'bg-charcoal-850 border-charcoal-700 text-stone-400 hover:border-stone-500'
+                        ? 'bg-mocha-800 border-gold text-gold font-bold shadow-sm'
+                        : 'bg-mocha-950 border-mocha-800 text-stone-400 hover:border-gold/30'
                     }`}
                   >
                     {pct}%
@@ -119,7 +119,7 @@ export const FinancingCalculator: React.FC = () => {
               step="5"
               value={downPaymentPercent}
               onChange={e => setDownPaymentPercent(Number(e.target.value))}
-              className="w-full h-2 bg-charcoal-800 rounded-lg appearance-none cursor-pointer accent-copper"
+              className="w-full h-2 bg-mocha-950 rounded-lg appearance-none cursor-pointer accent-amber"
             />
           </div>
 
@@ -136,8 +136,8 @@ export const FinancingCalculator: React.FC = () => {
                   onClick={() => setLoanTermMonths(term)}
                   className={`p-2.5 text-xs rounded border text-center transition-all ${
                     loanTermMonths === term
-                      ? 'bg-charcoal-800 border-copper text-copper font-bold shadow-copper'
-                      : 'bg-charcoal-850 border-charcoal-700 text-stone-300 hover:border-stone-500'
+                      ? 'bg-mocha-800 border-gold text-gold font-bold shadow-gold-sm'
+                      : 'bg-mocha-950 border-mocha-800 text-stone-300 hover:border-gold/30'
                   }`}
                 >
                   <span className="block font-medium">{term} Months</span>
@@ -153,7 +153,7 @@ export const FinancingCalculator: React.FC = () => {
               <label className="text-xs font-mono uppercase tracking-wider text-stone-300">
                 Illustrative Interest Rate (APR)
               </label>
-              <span className="font-mono text-sm font-bold text-ivory bg-charcoal-800 px-2.5 py-0.5 rounded border border-charcoal-700">
+              <span className="font-mono text-sm font-bold text-gold-100 bg-mocha-950 px-2.5 py-0.5 rounded border border-mocha-800">
                 {interestRateAPR.toFixed(2)}% APR
               </span>
             </div>
@@ -164,7 +164,7 @@ export const FinancingCalculator: React.FC = () => {
               step="0.25"
               value={interestRateAPR}
               onChange={e => setInterestRateAPR(Number(e.target.value))}
-              className="w-full h-2 bg-charcoal-800 rounded-lg appearance-none cursor-pointer accent-copper"
+              className="w-full h-2 bg-mocha-950 rounded-lg appearance-none cursor-pointer accent-amber"
             />
             <div className="flex justify-between text-[11px] text-stone-500 font-mono mt-1">
               <span>4.99% (Prime)</span>
@@ -176,13 +176,14 @@ export const FinancingCalculator: React.FC = () => {
 
         {/* Right Output Card (5 Cols) */}
         <div className="lg:col-span-5 flex flex-col justify-between">
-          <div className="bg-charcoal-950 border border-charcoal-700/80 rounded p-6 sm:p-8 space-y-6">
+          <div className="bg-mocha-950 border border-gold/30 rounded-xl p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-amber/5 rounded-full blur-2xl pointer-events-none" />
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-stone-400 block mb-1">
                 Estimated Monthly Installment
               </span>
               <div className="flex items-baseline gap-2">
-                <span id="financing-monthly-payment" className="font-serif text-4xl sm:text-5xl font-bold text-copper">
+                <span id="financing-monthly-payment" className="font-serif text-4xl sm:text-5xl font-bold text-gold-100">
                   ${calculations.monthlyPayment.toLocaleString()}
                 </span>
                 <span className="text-stone-400 font-mono text-xs">/ month</span>
@@ -192,32 +193,32 @@ export const FinancingCalculator: React.FC = () => {
               </p>
             </div>
 
-            <div className="space-y-2.5 text-xs border-t border-b border-charcoal-800 py-4">
+            <div className="space-y-2.5 text-xs border-t border-b border-mocha-800/80 py-4">
               <div className="flex justify-between">
                 <span className="text-stone-400">Project Total Scope:</span>
-                <span className="text-ivory font-mono font-medium">${projectAmount.toLocaleString()}</span>
+                <span className="text-gold-100 font-mono font-medium">${projectAmount.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-stone-400">Down Payment ({downPaymentPercent}%):</span>
-                <span className="text-ivory font-mono">${calculations.downPaymentAmount.toLocaleString()}</span>
+                <span className="text-gold-100 font-mono">${calculations.downPaymentAmount.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-stone-400">Financed Principal:</span>
-                <span className="text-ivory font-mono">${calculations.principal.toLocaleString()}</span>
+                <span className="text-gold-100 font-mono">${calculations.principal.toLocaleString()}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-stone-400">Est. Total Finance Charges:</span>
                 <span className="text-stone-300 font-mono">${Math.max(0, calculations.totalInterest).toLocaleString()}</span>
               </div>
-              <div className="flex justify-between pt-1 border-t border-charcoal-850">
+              <div className="flex justify-between pt-1 border-t border-mocha-900">
                 <span className="text-stone-400">Total Estimated Outlay:</span>
-                <span className="text-copper font-mono font-semibold">${calculations.totalPaid.toLocaleString()}</span>
+                <span className="text-amber font-mono font-semibold">${calculations.totalPaid.toLocaleString()}</span>
               </div>
             </div>
 
             {/* Compulsory Legal Disclaimer */}
-            <div className="bg-charcoal-900 border border-amber-500/30 p-3.5 rounded text-xs text-stone-400 leading-relaxed">
-              <div className="flex items-center gap-1.5 text-amber-400 font-semibold uppercase tracking-wider text-xs mb-1">
+            <div className="bg-mocha-900/80 border border-amber/30 p-3.5 rounded-lg text-xs text-stone-400 leading-relaxed">
+              <div className="flex items-center gap-1.5 text-amber font-semibold uppercase tracking-wider text-xs mb-1">
                 <ShieldAlert className="w-3.5 h-3.5 flex-shrink-0" />
                 <span>Budgeting Disclaimer</span>
               </div>
@@ -231,7 +232,7 @@ export const FinancingCalculator: React.FC = () => {
                 service: 'Full Roof Replacement Financing Consultation',
                 estimatedCostRange: `$${projectAmount.toLocaleString()} ($${calculations.monthlyPayment}/mo est.)`
               })}
-              className="w-full bg-copper hover:bg-copper-light text-charcoal-950 font-bold py-3.5 px-6 rounded-sm shadow-copper text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5"
+              className="w-full bg-amber hover:bg-amber-light text-mocha-950 font-bold py-3.5 px-6 rounded-md shadow-amber text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5"
             >
               <span>Consult With Estimator</span>
               <ArrowRight className="w-4 h-4" />

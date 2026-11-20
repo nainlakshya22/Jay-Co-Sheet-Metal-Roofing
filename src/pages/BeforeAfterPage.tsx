@@ -8,18 +8,19 @@ export const BeforeAfterPage: React.FC = () => {
   const { openQuoteModal } = useNavigation();
 
   return (
-    <div className="py-12 sm:py-16 bg-charcoal-950 text-stone-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <div className="py-12 sm:py-16 bg-mocha-950 text-stone-300 relative overflow-hidden">
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         <Breadcrumbs items={[{ label: 'Before & After' }]} />
 
         {/* Hero Header */}
         <div className="max-w-3xl space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 bg-charcoal-900 border border-copper/50 px-3.5 py-1.5 rounded-full text-copper text-xs font-mono uppercase tracking-wider">
-            <ArrowLeftRight className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 bg-mocha-900/90 border border-gold/40 px-3.5 py-1.5 rounded-full text-gold text-xs font-mono uppercase tracking-wider">
+            <ArrowLeftRight className="w-3.5 h-3.5 text-amber" />
             <span>Interactive Transformations</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl text-ivory font-bold leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl text-gold-100 font-bold leading-tight">
             Before & After Architectural Transformations
           </h1>
 
@@ -53,8 +54,8 @@ export const BeforeAfterPage: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-charcoal-900 border border-copper/30 rounded p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-4">
-          <h3 className="font-serif text-2xl sm:text-3xl text-ivory font-bold">
+        <div className="bg-mocha-900/90 border border-gold/30 rounded-xl p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-4 shadow-xl">
+          <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold">
             Is Your Roof Showing Signs of Moisture Intrusion or Age?
           </h3>
           <p className="text-xs sm:text-sm text-stone-300">
@@ -62,7 +63,7 @@ export const BeforeAfterPage: React.FC = () => {
           </p>
           <button
             onClick={() => openQuoteModal({ service: 'Roof Transformation Consultation' })}
-            className="bg-copper hover:bg-copper-light text-charcoal-950 font-bold px-6 py-3 rounded-sm shadow-copper text-xs uppercase tracking-wider transition-all inline-flex items-center gap-2"
+            className="bg-amber hover:bg-amber-light text-mocha-950 font-bold px-6 py-3 rounded-md shadow-amber text-xs uppercase tracking-wider transition-all inline-flex items-center gap-2"
           >
             <span>Request Diagnostic Inspection</span>
             <ArrowRight className="w-4 h-4" />

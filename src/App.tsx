@@ -96,7 +96,7 @@ const MainContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-charcoal-950 text-stone-200 overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-mocha-950 text-stone-200 overflow-x-hidden">
       <Header />
       <main className="flex-1 w-full overflow-x-hidden">
         {renderRoute()}
@@ -109,13 +109,13 @@ const MainContent: React.FC = () => {
       {/* Floating Concierge AI Trigger Button (Desktop & Tablet) */}
       <button
         onClick={openAssistant}
-        className="fixed bottom-6 right-6 z-40 hidden sm:flex items-center gap-2.5 bg-charcoal-900/90 hover:bg-charcoal-850 text-copper border border-copper/50 hover:border-copper px-4 py-3 rounded-full shadow-copper backdrop-blur-md transition-all transform hover:scale-105 group"
+        className="fixed bottom-6 right-6 z-40 hidden sm:flex items-center gap-2.5 bg-mocha-900/95 hover:bg-mocha-850 text-gold border border-gold/40 hover:border-gold px-4 py-3 rounded-full shadow-gold-lg backdrop-blur-md transition-all transform hover:scale-105 group gold-border-glow"
         aria-label="Open Jay-Co Architectural Assistant"
       >
-        <div className="w-6 h-6 rounded-full bg-copper/20 flex items-center justify-center text-copper">
-          <Sparkles className="w-4 h-4 text-copper animate-pulse" />
+        <div className="w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center text-amber">
+          <Sparkles className="w-4 h-4 text-amber animate-pulse" />
         </div>
-        <span className="font-serif font-bold text-xs text-ivory tracking-wider">
+        <span className="font-serif font-bold text-xs text-ivory tracking-wider group-hover:text-gold transition-colors">
           Ask Concierge
         </span>
         <span className="w-2 h-2 rounded-full bg-emerald-400" />
@@ -133,7 +133,7 @@ const MainContent: React.FC = () => {
           >
             <button
               onClick={closeQuoteModal}
-              className="absolute top-2 right-2 sm:-top-3 sm:-right-3 z-10 min-w-[44px] min-h-[44px] flex items-center justify-center bg-charcoal-800 text-stone-300 hover:text-white p-2 rounded-full border border-charcoal-700 shadow-lg active:scale-95 transition-all"
+              className="absolute top-2 right-2 sm:-top-3 sm:-right-3 z-10 min-w-[44px] min-h-[44px] flex items-center justify-center bg-mocha-850 text-stone-300 hover:text-gold p-2 rounded-full border border-gold/40 shadow-lg active:scale-95 transition-all"
               aria-label="Close quote modal"
             >
               <X className="w-5 h-5" />

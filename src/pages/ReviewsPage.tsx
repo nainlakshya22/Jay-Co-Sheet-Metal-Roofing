@@ -9,18 +9,19 @@ export const ReviewsPage: React.FC = () => {
   const { openQuoteModal } = useNavigation();
 
   return (
-    <div className="py-12 sm:py-16 bg-charcoal-950 text-stone-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+    <div className="py-12 sm:py-16 bg-mocha-950 text-stone-300 relative overflow-hidden">
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         <Breadcrumbs items={[{ label: 'Customer Reviews' }]} />
 
         {/* Hero Header */}
         <div className="max-w-3xl space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 bg-charcoal-900 border border-copper/50 px-3.5 py-1.5 rounded-full text-copper text-xs font-mono uppercase tracking-wider">
-            <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+          <div className="inline-flex items-center gap-2 bg-mocha-900/90 border border-gold/40 px-3.5 py-1.5 rounded-full text-gold text-xs font-mono uppercase tracking-wider">
+            <Star className="w-3.5 h-3.5 fill-gold text-gold" />
             <span>Verified Customer Feedback</span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl text-ivory font-bold leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl text-gold-100 font-bold leading-tight">
             Client Reviews & GAF Network Feedback
           </h1>
 
@@ -35,9 +36,9 @@ export const ReviewsPage: React.FC = () => {
         </div>
 
         {/* Trust & Methodology Notice */}
-        <div className="bg-charcoal-900 border border-charcoal-800 rounded p-6 sm:p-8 space-y-4 max-w-4xl mx-auto">
-          <h3 className="font-serif text-lg font-bold text-ivory flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-copper" />
+        <div className="bg-mocha-900/90 border border-gold/30 rounded-xl p-6 sm:p-8 space-y-4 max-w-4xl mx-auto shadow-xl">
+          <h3 className="font-serif text-lg font-bold text-gold-100 flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-gold" />
             <span>Our Review Authenticity Commitment</span>
           </h3>
           <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
@@ -48,7 +49,7 @@ export const ReviewsPage: React.FC = () => {
               href="https://www.gaf.com/en-us/roofing-contractors/residential/usa/tx/houston/jay-co-sheet-metal-and-roofing-1132527"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-copper hover:underline flex items-center gap-1"
+              className="text-gold hover:underline flex items-center gap-1"
             >
               <span>View GAF Profile #1132527</span>
               <ExternalLink className="w-3.5 h-3.5" />

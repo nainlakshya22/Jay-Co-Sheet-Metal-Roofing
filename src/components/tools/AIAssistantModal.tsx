@@ -176,20 +176,20 @@ export const AIAssistantModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fadeIn">
+    <div className="fixed inset-0 z-50 bg-mocha-950/85 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-4 animate-fadeIn">
       <div 
-        className="w-full max-w-xl h-[85vh] sm:h-[650px] bg-charcoal-950 border border-charcoal-700/80 rounded-t-xl sm:rounded-sm shadow-2xl flex flex-col overflow-hidden"
+        className="w-full max-w-xl h-[85vh] sm:h-[650px] bg-mocha-950 border border-gold/40 rounded-t-2xl sm:rounded-xl shadow-2xl flex flex-col overflow-hidden"
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="bg-charcoal-900 border-b border-charcoal-800 p-4 flex items-center justify-between">
+        <div className="bg-mocha-900 border-b border-mocha-800/80 p-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded bg-charcoal-800 border border-copper/40 p-1.5 flex items-center justify-center text-copper">
-              <Sparkles className="w-5 h-5 text-copper animate-pulse" />
+            <div className="w-9 h-9 rounded-lg bg-mocha-950 border border-gold/40 p-1.5 flex items-center justify-center text-gold">
+              <Sparkles className="w-5 h-5 text-gold animate-pulse" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-serif font-bold text-ivory text-sm">
+                <span className="font-serif font-bold text-gold-100 text-sm">
                   Jay-Co Architectural Assistant
                 </span>
                 <span className="w-2 h-2 rounded-full bg-emerald-400" title="Online Concierge" />
@@ -202,7 +202,7 @@ export const AIAssistantModal: React.FC = () => {
 
           <button
             onClick={closeAssistant}
-            className="min-w-[44px] min-h-[44px] p-2 flex items-center justify-center text-stone-400 hover:text-white rounded hover:bg-charcoal-800 transition-colors"
+            className="min-w-[44px] min-h-[44px] p-2 flex items-center justify-center text-stone-400 hover:text-gold rounded hover:bg-mocha-850 transition-colors"
             aria-label="Close assistant"
           >
             <X className="w-5 h-5" />
@@ -217,17 +217,17 @@ export const AIAssistantModal: React.FC = () => {
               className={`flex gap-3 ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               {msg.sender === 'assistant' && (
-                <div className="w-7 h-7 rounded bg-charcoal-850 border border-copper/30 flex items-center justify-center text-copper flex-shrink-0 mt-0.5">
+                <div className="w-7 h-7 rounded-md bg-mocha-900 border border-gold/30 flex items-center justify-center text-gold flex-shrink-0 mt-0.5">
                   <Bot className="w-4 h-4" />
                 </div>
               )}
 
               <div className={`max-w-[85%] space-y-2`}>
                 <div
-                  className={`p-3.5 rounded-sm leading-relaxed whitespace-pre-wrap ${
+                  className={`p-3.5 rounded-lg leading-relaxed whitespace-pre-wrap ${
                     msg.sender === 'user'
-                      ? 'bg-copper text-charcoal-950 font-medium ml-auto'
-                      : 'bg-charcoal-900 border border-charcoal-800 text-stone-200'
+                      ? 'bg-amber text-mocha-950 font-medium ml-auto shadow-sm'
+                      : 'bg-mocha-900 border border-gold/20 text-stone-200'
                   }`}
                 >
                   {msg.text}
@@ -236,10 +236,10 @@ export const AIAssistantModal: React.FC = () => {
                 {msg.action && (
                   <button
                     onClick={() => handleActionClick(msg.action)}
-                    className="min-h-[44px] flex items-center gap-2 text-xs font-semibold text-copper hover:text-copper-light bg-charcoal-850 border border-copper/30 hover:border-copper px-3.5 py-2.5 rounded transition-all shadow-sm"
+                    className="min-h-[44px] flex items-center gap-2 text-xs font-semibold text-gold hover:text-gold-100 bg-mocha-900 border border-gold/40 hover:border-gold px-3.5 py-2.5 rounded-md transition-all shadow-sm"
                   >
                     <span>{msg.action.label}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 text-amber" />
                   </button>
                 )}
 
@@ -249,7 +249,7 @@ export const AIAssistantModal: React.FC = () => {
               </div>
 
               {msg.sender === 'user' && (
-                <div className="w-7 h-7 rounded bg-charcoal-800 border border-charcoal-700 flex items-center justify-center text-stone-300 flex-shrink-0 mt-0.5">
+                <div className="w-7 h-7 rounded-md bg-mocha-800 border border-mocha-700 flex items-center justify-center text-gold-100 flex-shrink-0 mt-0.5">
                   <User className="w-4 h-4" />
                 </div>
               )}
@@ -259,11 +259,11 @@ export const AIAssistantModal: React.FC = () => {
           {isTyping && (
             <div className="flex items-center gap-2 text-stone-400 text-xs pl-10">
               <div className="flex gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-copper animate-bounce" />
-                <span className="w-1.5 h-1.5 rounded-full bg-copper animate-bounce [animation-delay:0.2s]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-copper animate-bounce [animation-delay:0.4s]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-bounce" />
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-bounce [animation-delay:0.2s]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-gold animate-bounce [animation-delay:0.4s]" />
               </div>
-              <span className="font-mono text-[11px]">Consulting technical records...</span>
+              <span className="font-mono text-[11px] text-gold/80">Consulting technical records...</span>
             </div>
           )}
 
@@ -271,12 +271,12 @@ export const AIAssistantModal: React.FC = () => {
         </div>
 
         {/* Quick Prompts Bar */}
-        <div className="px-4 py-2 border-t border-charcoal-800/80 bg-charcoal-900/60 overflow-x-auto flex gap-2 no-scrollbar">
+        <div className="px-4 py-2 border-t border-mocha-800/80 bg-mocha-900/80 overflow-x-auto flex gap-2 no-scrollbar">
           {QUICK_PROMPTS.map((prompt, idx) => (
             <button
               key={idx}
               onClick={() => handleSend(prompt)}
-              className="min-h-[38px] text-[11px] sm:text-xs text-stone-300 hover:text-copper bg-charcoal-800 border border-charcoal-700/80 hover:border-copper/40 px-3 py-1.5 rounded whitespace-nowrap transition-colors flex-shrink-0 flex items-center"
+              className="min-h-[38px] text-[11px] sm:text-xs text-stone-300 hover:text-gold bg-mocha-950 border border-mocha-800 hover:border-gold/40 px-3 py-1.5 rounded-md whitespace-nowrap transition-colors flex-shrink-0 flex items-center"
             >
               {prompt}
             </button>
@@ -284,7 +284,7 @@ export const AIAssistantModal: React.FC = () => {
         </div>
 
         {/* Input Controls */}
-        <div className="p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-charcoal-900 border-t border-charcoal-800">
+        <div className="p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-mocha-900 border-t border-mocha-800">
           <form
             onSubmit={e => {
               e.preventDefault();
@@ -297,12 +297,12 @@ export const AIAssistantModal: React.FC = () => {
               value={input}
               onChange={e => setInput(e.target.value)}
               placeholder="Ask about standing seam, GAF warranty, copper, or Bunker Hill..."
-              className="flex-1 bg-charcoal-850 border border-charcoal-700 rounded py-2.5 px-3 text-base sm:text-sm text-ivory focus:outline-none focus:border-copper"
+              className="flex-1 bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-base sm:text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
             />
             <button
               type="submit"
               disabled={!input.trim()}
-              className="min-w-[44px] min-h-[44px] p-2.5 bg-copper hover:bg-copper-light disabled:opacity-40 text-charcoal-950 rounded transition-colors flex items-center justify-center flex-shrink-0"
+              className="min-w-[44px] min-h-[44px] p-2.5 bg-amber hover:bg-amber-light disabled:opacity-40 text-mocha-950 rounded-lg transition-colors flex items-center justify-center flex-shrink-0 shadow-amber"
               aria-label="Send inquiry"
             >
               <Send className="w-4 h-4" />
@@ -310,7 +310,7 @@ export const AIAssistantModal: React.FC = () => {
           </form>
           <div className="flex items-center justify-between mt-2 text-[10px] text-stone-500 font-mono">
             <span>Verified Knowledge Base • Houston, TX</span>
-            <span>Direct Call: (713) 738-4525</span>
+            <span className="text-gold/80">Direct Call: (713) 738-4525</span>
           </div>
         </div>
       </div>

@@ -74,33 +74,33 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
   };
 
   return (
-    <div className="bg-charcoal-900 border border-charcoal-700/80 rounded-sm shadow-elevated p-6 sm:p-10">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-charcoal-800 pb-6 mb-8">
+    <div className="bg-mocha-900 border border-gold/30 rounded-sm shadow-luxury p-6 sm:p-10">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-mocha-800 pb-6 mb-8">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="p-1.5 bg-copper/20 text-copper rounded border border-copper/30">
-              <ArrowLeftRight className="w-4 h-4" />
+            <span className="p-1.5 bg-mocha-850 text-gold rounded border border-gold/30">
+              <ArrowLeftRight className="w-4 h-4 text-amber" />
             </span>
-            <span className="text-xs font-mono uppercase tracking-widest text-copper">
+            <span className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
               Interactive Craftsmanship Comparison
             </span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl text-ivory font-bold">
             {title}
           </h2>
-          <p className="text-xs sm:text-sm text-stone-400 mt-1 max-w-2xl">
+          <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-2xl">
             {description}
           </p>
         </div>
         <div className="text-right hidden md:block">
-          <span className="text-xs text-stone-500 font-mono">Drag divider or use arrows</span>
+          <span className="text-xs text-stone-400 font-mono">Drag divider or use arrows</span>
         </div>
       </div>
 
       {/* Slider Container */}
       <div
         ref={containerRef}
-        className="relative w-full h-[380px] sm:h-[480px] md:h-[560px] rounded overflow-hidden select-none cursor-ew-resize border border-charcoal-700"
+        className="relative w-full h-[380px] sm:h-[480px] md:h-[560px] rounded overflow-hidden select-none cursor-ew-resize border border-gold/40 shadow-luxury"
         onMouseDown={e => {
           setIsDragging(true);
           handleMove(e.clientX);
@@ -121,9 +121,9 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         />
 
         {/* AFTER BADGE */}
-        <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-charcoal-950/90 backdrop-blur-md border border-copper/60 text-ivory px-2.5 sm:px-3 py-1 sm:py-1.5 rounded text-[11px] sm:text-xs font-medium shadow-lg z-10 pointer-events-none flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-copper animate-pulse flex-shrink-0" />
-          <span><strong className="text-copper">AFTER:</strong> <span className="hidden sm:inline">{afterLabel}</span><span className="sm:hidden">Jay-Co Craftsmanship</span></span>
+        <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-mocha-950/95 backdrop-blur-md border border-gold/60 text-ivory px-2.5 sm:px-3 py-1 sm:py-1.5 rounded text-[11px] sm:text-xs font-medium shadow-gold z-10 pointer-events-none flex items-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-amber animate-pulse flex-shrink-0" />
+          <span><strong className="text-gold">AFTER:</strong> <span className="hidden sm:inline">{afterLabel}</span><span className="sm:hidden">Jay-Co Craftsmanship</span></span>
         </div>
 
         {/* BEFORE IMAGE (Clipped on Left) */}
@@ -138,7 +138,7 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
             style={{ width: containerRef.current ? `${containerRef.current.clientWidth}px` : '100%', maxWidth: 'none' }}
           />
           {/* BEFORE BADGE */}
-          <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-charcoal-950/90 backdrop-blur-md border border-charcoal-700 text-stone-300 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded text-[11px] sm:text-xs font-medium shadow-lg z-10 pointer-events-none flex items-center gap-1.5">
+          <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-mocha-950/95 backdrop-blur-md border border-mocha-700 text-stone-300 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded text-[11px] sm:text-xs font-medium shadow-lg z-10 pointer-events-none flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0" />
             <span><strong className="text-red-400">BEFORE:</strong> <span className="hidden sm:inline">{beforeLabel}</span><span className="sm:hidden">Weathered Substrate</span></span>
           </div>
@@ -146,22 +146,22 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
         {/* DRAGGABLE DIVIDER LINE */}
         <div
-          className="absolute top-0 bottom-0 w-1 bg-gradient-to-b from-copper-light via-copper to-copper-dark shadow-2xl z-20"
+          className="absolute top-0 bottom-0 w-1 bg-gradient-to-b from-gold-light via-gold to-amber shadow-2xl z-20"
           style={{ left: `${sliderPosition}%` }}
         >
           {/* Circular Drag Handle (48px Touch Target) */}
           <div 
-            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-charcoal-950 border-2 border-copper text-copper shadow-copper flex items-center justify-center cursor-ew-resize active:scale-110 transition-transform"
+            className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-mocha-950 border-2 border-gold text-amber shadow-gold flex items-center justify-center cursor-ew-resize active:scale-110 transition-transform"
             aria-label="Drag divider handle"
           >
-            <ArrowLeftRight className="w-5 h-5" />
+            <ArrowLeftRight className="w-5 h-5 text-amber" />
           </div>
         </div>
       </div>
 
       <div className="flex items-center justify-between mt-4 text-xs text-stone-400 font-mono">
         <span>← Weathered Substrate & Degradation</span>
-        <span className="text-copper font-medium">100% Watertight Hand-Soldered Integrity →</span>
+        <span className="text-gold font-medium">100% Watertight Hand-Soldered Integrity →</span>
       </div>
     </div>
   );
