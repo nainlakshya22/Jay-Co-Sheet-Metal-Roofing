@@ -23,6 +23,35 @@
     <meta name="theme-color" content="#120E0B" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,10 90,40 75,40 50,22 25,40 10,40' fill='%23C8792C'/><rect x='20' y='45' width='60' height='45' fill='%231C1612' stroke='%23F4D9A0' stroke-width='4'/><path d='M35 90 L35 60 L65 60 L65 90' fill='%23C8792C'/></svg>" />
 
+    <!-- Google Consent Mode v2 (Default Configuration) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      (function() {
+        var saved = null;
+        try {
+          var raw = localStorage.getItem('jayco_cookie_consent_v1');
+          if (raw) saved = JSON.parse(raw);
+        } catch(e) {}
+
+        var analytics = saved && saved.categories && saved.categories.analytics;
+        var marketing = saved && saved.categories && saved.categories.marketing && !saved.ccpaOptOut;
+        var functional = saved && saved.categories && saved.categories.functional;
+
+        gtag('consent', 'default', {
+          'analytics_storage': analytics ? 'granted' : 'denied',
+          'ad_storage': marketing ? 'granted' : 'denied',
+          'ad_user_data': marketing ? 'granted' : 'denied',
+          'ad_personalization': marketing ? 'granted' : 'denied',
+          'functionality_storage': functional ? 'granted' : 'denied',
+          'personalization_storage': functional ? 'granted' : 'denied',
+          'security_storage': 'granted',
+          'wait_for_update': 500
+        });
+      })();
+    </script>
+
     <!-- Structured Data: LocalBusiness & RoofingContractor -->
     <script type="application/ld+json">
     {

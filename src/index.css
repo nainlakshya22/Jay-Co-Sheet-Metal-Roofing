@@ -285,6 +285,30 @@
   animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* F. Luxury Cookie Popup Entry Animation */
+@keyframes luxuryCookieSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(45px) scale(0.96);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 0.95;
+    transform: translateY(-4px) scale(1.005);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.animate-cookie-popup {
+  animation: luxuryCookieSlideUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
 /* E. Gold Edge Light Glow */
 .gold-border-glow {
   border: 1px solid rgba(244, 217, 160, 0.35);

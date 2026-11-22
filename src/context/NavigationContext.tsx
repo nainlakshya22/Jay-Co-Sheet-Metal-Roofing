@@ -43,6 +43,7 @@ export const NavigationProvider: React.FC<{ children: React.ReactNode }> = ({ ch
       if (raw === 'service-balcony-waterproofing') raw = 'service-waterproofing';
       if ((raw as string) === 'bunker-hill') raw = 'project-bunker-hill';
       if ((raw as string) === 'before-and-after') raw = 'before-after';
+      if ((raw as string) === 'cookie-policy' || (raw as string) === 'cookie') raw = 'cookies';
 
       if (raw) {
         setCurrentRoute(raw);

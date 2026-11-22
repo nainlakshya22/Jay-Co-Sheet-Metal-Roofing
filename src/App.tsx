@@ -28,7 +28,11 @@ import { ContactPage } from './pages/ContactPage';
 import { FaqPage } from './pages/FaqPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
+import { CookiePolicyPage } from './pages/CookiePolicyPage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
+import { CookieConsentProvider } from './context/CookieConsentContext';
+import { CookieConsentBanner } from './components/cookie/CookieConsentBanner';
+import { CookiePreferencesModal } from './components/cookie/CookiePreferencesModal';
 import { Sparkles, X } from 'lucide-react';
 
 const MainContent: React.FC = () => {
@@ -76,6 +80,8 @@ const MainContent: React.FC = () => {
         return <PrivacyPage />;
       case 'terms':
         return <TermsPage />;
+      case 'cookies':
+        return <CookiePolicyPage />;
       // Dynamic service detail routes
       case 'service-standing-seam':
       case 'service-copper-roofing':
@@ -105,6 +111,8 @@ const MainContent: React.FC = () => {
       <StickyMobileBar />
       <Lightbox />
       <AIAssistantModal />
+      <CookieConsentBanner />
+      <CookiePreferencesModal />
 
       {/* Floating Concierge AI Trigger Button (Desktop & Tablet) */}
       <button
@@ -148,9 +156,11 @@ const MainContent: React.FC = () => {
 
 export const App: React.FC = () => {
   return (
-    <NavigationProvider>
-      <MainContent />
-    </NavigationProvider>
+    <CookieConsentProvider>
+      <NavigationProvider>
+        <MainContent />
+      </NavigationProvider>
+    </CookieConsentProvider>
   );
 };
 

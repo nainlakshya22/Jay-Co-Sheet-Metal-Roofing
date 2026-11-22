@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigation } from '../../context/NavigationContext';
+import { useCookieConsent } from '../../context/CookieConsentContext';
 import { COMPANY_INFO } from '../../data/companyData';
 import { 
   Phone, 
@@ -14,6 +15,7 @@ import {
 
 export const Footer: React.FC = () => {
   const { navigateTo, openQuoteModal, openAssistant } = useNavigation();
+  const { openPreferences } = useCookieConsent();
 
   return (
     <footer className="bg-mocha-950 border-t border-mocha-800 text-stone-300 text-sm">
@@ -292,6 +294,15 @@ export const Footer: React.FC = () => {
             </button>
             <button onClick={() => navigateTo('terms')} className="hover:text-gold py-2 px-1 transition-colors">
               Terms of Service
+            </button>
+            <button onClick={() => navigateTo('cookies')} className="hover:text-gold py-2 px-1 transition-colors">
+              Cookie Policy
+            </button>
+            <button onClick={() => openPreferences('categories')} className="hover:text-gold py-2 px-1 transition-colors">
+              Cookie Preferences
+            </button>
+            <button onClick={() => openPreferences('ccpa')} className="hover:text-amber py-2 px-1 transition-colors">
+              Do Not Sell or Share My Info
             </button>
             <button onClick={() => navigateTo('faqs')} className="hover:text-gold py-2 px-1 transition-colors">
               FAQs

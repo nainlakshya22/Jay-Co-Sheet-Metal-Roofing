@@ -19,6 +19,7 @@ export type PageRoute =
   | 'contact'
   | 'privacy'
   | 'terms'
+  | 'cookies'
   // Service detail routes
   | 'service-standing-seam'
   | 'service-copper-roofing'
