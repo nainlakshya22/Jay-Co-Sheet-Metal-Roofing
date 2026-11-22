@@ -36,18 +36,18 @@ export const ServicesDirectoryPage: React.FC = () => {
             Specialized Roofing & Sheet Metal Fabrication Directory
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Every service below is directly performed by Jay-Co Sheet Metal & Roofing, utilizing shop fabrication at our 2307 Knight St Houston facility and factory-certified GAF installation standards.
           </p>
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap gap-2 mb-10">
+        <div className="flex flex-wrap gap-2.5 mb-10">
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-lg text-xs font-medium uppercase tracking-wider transition-all border ${
+              className={`min-h-[44px] px-5 py-2.5 rounded-lg text-xs font-medium uppercase tracking-wider transition-all border flex items-center justify-center ${
                 selectedCategory === cat
                   ? 'bg-amber text-mocha-950 font-bold border-amber shadow-amber'
                   : 'bg-mocha-900 border-mocha-800 text-stone-300 hover:border-gold/40 hover:text-gold-100'
@@ -82,10 +82,10 @@ export const ServicesDirectoryPage: React.FC = () => {
                   <span className="text-xs font-mono text-gold uppercase tracking-wider block mb-1">
                     {service.subtitle}
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-gold-100 group-hover:text-gold transition-colors">
+                  <h3 className="font-serif text-2xl font-bold text-gold-100 group-hover:text-gold transition-colors leading-snug">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-stone-300 mt-2 leading-relaxed">
+                  <p className="text-sm sm:text-base text-stone-300 mt-2 leading-relaxed">
                     {service.shortDescription}
                   </p>
                 </div>
@@ -93,7 +93,7 @@ export const ServicesDirectoryPage: React.FC = () => {
                 <div className="space-y-3 pt-3 border-t border-mocha-800/80">
                   <div className="flex flex-wrap gap-1.5">
                     {service.materialsUsed.slice(0, 3).map((mat, i) => (
-                      <span key={i} className="text-[10px] bg-mocha-950 text-stone-300 px-2.5 py-1 rounded-md border border-mocha-800 font-mono">
+                      <span key={i} className="text-xs bg-mocha-950 text-stone-300 px-2.5 py-1 rounded-md border border-mocha-800 font-mono">
                         {mat}
                       </span>
                     ))}
@@ -102,15 +102,15 @@ export const ServicesDirectoryPage: React.FC = () => {
                   <div className="flex items-center justify-between pt-2">
                     <button
                       onClick={() => navigateTo(service.slug)}
-                      className="text-gold hover:text-gold-light text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors"
+                      className="min-h-[44px] text-gold hover:text-gold-light text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors"
                     >
-                      <span>Detailed Technical Specifications</span>
+                      <span>Technical Specifications</span>
                       <ArrowRight className="w-4 h-4 text-amber" />
                     </button>
 
                     <button
                       onClick={() => openQuoteModal({ service: service.title })}
-                      className="bg-mocha-950 hover:bg-amber hover:text-mocha-950 text-gold border border-gold/40 hover:border-amber px-3.5 py-1.5 rounded-md text-xs uppercase tracking-wider font-semibold transition-all shadow-sm"
+                      className="min-h-[44px] bg-mocha-950 hover:bg-amber hover:text-mocha-950 text-gold border border-gold/40 hover:border-amber px-4 py-2 rounded-md text-xs uppercase tracking-wider font-semibold transition-all shadow-sm"
                     >
                       Quote
                     </button>

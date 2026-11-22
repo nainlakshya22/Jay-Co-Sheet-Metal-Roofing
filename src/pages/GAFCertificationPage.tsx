@@ -37,7 +37,7 @@ export const GAFCertificationPage: React.FC = () => {
             GAF Certified™ Residential Contractor #1132527
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Jay-Co Sheet Metal & Roofing is an officially verified GAF Certified™ residential contractor located in Houston, Texas. Discover how this factory standing protects your investment through enhanced warranty backing.
           </p>
         </div>
@@ -45,10 +45,10 @@ export const GAFCertificationPage: React.FC = () => {
         {/* 2-Column Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-20">
           <div className="lg:col-span-7 space-y-6">
-            <h2 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold">
+            <h2 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold leading-snug">
               Why GAF Manufacturer Certification Matters
             </h2>
-            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+            <p className="text-base text-stone-300 leading-relaxed">
               In the United States, less than 6% of roofing contractors qualify for certified status with GAF, North America's largest roofing manufacturer. To attain and maintain this credential, Jay-Co must continuously satisfy strict prerequisites:
             </p>
 
@@ -128,35 +128,35 @@ export const GAFCertificationPage: React.FC = () => {
             <span className="text-xs font-mono uppercase tracking-widest text-gold">
               Enhanced Warranty Architecture
             </span>
-            <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold mt-1">
+            <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold mt-1 leading-snug">
               GAF System Plus® Limited Warranty Coverage
             </h3>
-            <p className="text-xs sm:text-sm text-stone-300 mt-2 max-w-3xl leading-relaxed">
+            <p className="text-base text-stone-300 mt-2 max-w-3xl leading-relaxed">
               When Jay-Co installs a complete GAF Lifetime Roofing System—incorporating GAF shingles plus at least three qualifying accessories—your roof qualifies for the enhanced GAF System Plus Limited Warranty.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-5 bg-mocha-950 border border-mocha-800/80 rounded-lg space-y-2">
-              <span className="text-gold font-serif font-bold text-xl block">50 Years</span>
-              <h4 className="font-serif font-bold text-sm text-gold-100">Non-Prorated Protection</h4>
-              <p className="text-xs text-stone-400 leading-relaxed">
+            <div className="p-6 bg-mocha-950 border border-mocha-800/80 rounded-lg space-y-2.5">
+              <span className="text-gold font-serif font-bold text-2xl block">50 Years</span>
+              <h4 className="font-serif font-bold text-base text-gold-100">Non-Prorated Protection</h4>
+              <p className="text-sm text-stone-300 leading-relaxed">
                 100% material defect coverage with zero depreciation for 50 years on qualifying single-family residential properties.
               </p>
             </div>
 
-            <div className="p-5 bg-mocha-950 border border-mocha-800/80 rounded-lg space-y-2">
-              <span className="text-gold font-serif font-bold text-xl block">100% Covered</span>
-              <h4 className="font-serif font-bold text-sm text-gold-100">Tear-Off & Labor Costs</h4>
-              <p className="text-xs text-stone-400 leading-relaxed">
+            <div className="p-6 bg-mocha-950 border border-mocha-800/80 rounded-lg space-y-2.5">
+              <span className="text-gold font-serif font-bold text-2xl block">100% Covered</span>
+              <h4 className="font-serif font-bold text-base text-gold-100">Tear-Off & Labor Costs</h4>
+              <p className="text-sm text-stone-300 leading-relaxed">
                 Includes both tear-off labor costs and disposal costs if a covered manufacturing defect occurs during the smart choice protection period.
               </p>
             </div>
 
-            <div className="p-5 bg-mocha-950 border border-mocha-800/80 rounded-lg space-y-2">
-              <span className="text-gold font-serif font-bold text-xl block">Transferable</span>
-              <h4 className="font-serif font-bold text-sm text-gold-100">Estate Home Value</h4>
-              <p className="text-xs text-stone-400 leading-relaxed">
+            <div className="p-6 bg-mocha-950 border border-mocha-800/80 rounded-lg space-y-2.5">
+              <span className="text-gold font-serif font-bold text-2xl block">Transferable</span>
+              <h4 className="font-serif font-bold text-base text-gold-100">Estate Home Value</h4>
+              <p className="text-sm text-stone-300 leading-relaxed">
                 Warranty can be transferred to the subsequent homeowner, adding tangible resale value and peace of mind.
               </p>
             </div>
@@ -165,15 +165,15 @@ export const GAFCertificationPage: React.FC = () => {
 
         {/* CTA */}
         <div className="text-center max-w-xl mx-auto space-y-4">
-          <h3 className="font-serif text-2xl text-gold-100 font-bold">
+          <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold leading-snug">
             Protect Your Residence With a GAF System Plus Roof
           </h3>
-          <p className="text-xs text-stone-400">
+          <p className="text-base text-stone-300 leading-relaxed">
             Request an on-site consultation to review shingle styles, GAF underlayment packages, and warranty enrollment.
           </p>
           <button
             onClick={() => openQuoteModal({ service: 'GAF System Plus Roofing Consultation' })}
-            className="bg-amber hover:bg-amber-light text-mocha-950 font-bold px-6 py-3 rounded-md shadow-amber text-xs uppercase tracking-wider transition-all"
+            className="min-h-[44px] bg-amber hover:bg-amber-light text-mocha-950 font-bold px-6 py-3 rounded-md shadow-amber text-xs uppercase tracking-wider transition-all"
           >
             Request GAF System Plus Quote
           </button>

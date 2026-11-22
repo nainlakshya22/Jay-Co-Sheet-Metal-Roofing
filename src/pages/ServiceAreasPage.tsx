@@ -25,7 +25,7 @@ export const ServiceAreasPage: React.FC = () => {
             Houston Service Areas & Municipal Permitting Jurisdictions
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Centrally anchored at our 2307 Knight Street fabrication facility, Jay-Co provides specialized standing seam metal roofing, architectural copper, and GAF certified residential re-roofing across Houston's most prestigious enclaves.
           </p>
         </div>
@@ -41,7 +41,7 @@ export const ServiceAreasPage: React.FC = () => {
             <span className="text-xs font-mono uppercase tracking-widest text-gold">
               District Architecture Guides
             </span>
-            <h2 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold mt-1">
+            <h2 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold mt-1 leading-snug">
               Verified Neighborhood Coverage & Local Codes
             </h2>
           </div>
@@ -50,7 +50,7 @@ export const ServiceAreasPage: React.FC = () => {
             {SERVICE_AREAS.map(area => (
               <div
                 key={area.name}
-                className="bg-mocha-900/90 border border-gold/30 rounded-xl p-6 space-y-4 flex flex-col justify-between shadow-xl"
+                className="bg-mocha-900/90 border border-gold/30 rounded-xl p-6 sm:p-7 space-y-4 flex flex-col justify-between shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between mb-1">
@@ -61,21 +61,21 @@ export const ServiceAreasPage: React.FC = () => {
                       {area.distanceFromShop}
                     </span>
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-gold-100">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-gold-100 leading-snug">
                     {area.name}
                   </h3>
                   <p className="text-xs text-stone-400 font-mono mt-0.5">
                     ZIP Codes: {area.zipCodes.join(', ')}
                   </p>
-                  <p className="text-xs sm:text-sm text-stone-300 mt-3 leading-relaxed">
+                  <p className="text-sm sm:text-base text-stone-300 mt-3 leading-relaxed">
                     {area.description}
                   </p>
                 </div>
 
                 <div className="space-y-3 pt-3 border-t border-mocha-800/80">
-                  <div className="bg-mocha-950 p-2.5 rounded-lg border border-mocha-800 text-xs">
+                  <div className="bg-mocha-950 p-3 rounded-lg border border-mocha-800 text-xs sm:text-sm">
                     <span className="text-stone-400 block mb-0.5 font-mono text-[11px]">ARCHITECTURAL CONTEXT:</span>
-                    <span className="text-stone-300">{area.notableArchitecture}</span>
+                    <span className="text-stone-300 leading-relaxed">{area.notableArchitecture}</span>
                   </div>
 
                   <div className="flex items-center justify-between pt-1">
@@ -86,7 +86,7 @@ export const ServiceAreasPage: React.FC = () => {
 
                     <button
                       onClick={() => openQuoteModal({ service: `Roofing Inquiry for ${area.name}` })}
-                      className="text-stone-300 hover:text-gold text-xs font-semibold uppercase tracking-wider flex items-center gap-1 transition-colors"
+                      className="min-h-[44px] text-stone-300 hover:text-gold text-xs font-semibold uppercase tracking-wider flex items-center gap-1 transition-colors"
                     >
                       <span>Inquire In Area</span>
                       <ArrowRight className="w-3.5 h-3.5 text-amber" />

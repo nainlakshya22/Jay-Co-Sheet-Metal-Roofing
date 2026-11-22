@@ -210,7 +210,7 @@ export const AIAssistantModal: React.FC = () => {
         </div>
 
         {/* Message Thread */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs sm:text-sm">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4 text-sm sm:text-base">
           {messages.map(msg => (
             <div
               key={msg.id}

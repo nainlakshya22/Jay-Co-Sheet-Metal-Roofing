@@ -134,13 +134,13 @@ export const FinancingCalculator: React.FC = () => {
                   type="button"
                   key={term}
                   onClick={() => setLoanTermMonths(term)}
-                  className={`p-2.5 text-xs rounded border text-center transition-all ${
+                  className={`min-h-[44px] p-2 text-xs rounded border text-center flex flex-col items-center justify-center transition-all ${
                     loanTermMonths === term
                       ? 'bg-mocha-800 border-gold text-gold font-bold shadow-gold-sm'
                       : 'bg-mocha-950 border-mocha-800 text-stone-300 hover:border-gold/30'
                   }`}
                 >
-                  <span className="block font-medium">{term} Months</span>
+                  <span className="block font-medium">{term} Mo</span>
                   <span className="text-[10px] text-stone-400 block">{term / 12} Yrs</span>
                 </button>
               ))}

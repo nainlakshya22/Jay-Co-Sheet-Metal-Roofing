@@ -45,11 +45,11 @@ export const ServiceDetailPage: React.FC<{ slug: PageRoute }> = ({ slug }) => {
             {service.title}
           </h1>
 
-          <p className="font-serif text-lg sm:text-xl text-gold font-medium">
+          <p className="font-serif text-xl sm:text-2xl text-gold font-medium leading-snug">
             {service.subtitle}
           </p>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans max-w-3xl">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans max-w-3xl">
             {service.shortDescription}
           </p>
         </div>
@@ -76,36 +76,36 @@ export const ServiceDetailPage: React.FC<{ slug: PageRoute }> = ({ slug }) => {
 
             {/* In-Depth Description */}
             <div className="space-y-4">
-              <h2 className="font-serif text-2xl text-gold-100 font-bold">
+              <h2 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold leading-snug">
                 Architectural Engineering & Craftsmanship Overview
               </h2>
-              <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+              <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
                 {service.fullDescription}
               </p>
             </div>
 
             {/* Houston Climate Engineering Considerations */}
-            <div className="bg-mocha-900/90 border-l-4 border-gold p-5 rounded-r-xl space-y-2 shadow-lg">
+            <div className="bg-mocha-900/90 border-l-4 border-gold p-6 rounded-r-xl space-y-2 shadow-lg">
               <span className="text-xs font-mono uppercase tracking-widest text-gold block font-semibold">
                 Houston Climate Engineering Consideration
               </span>
-              <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-stone-300 leading-relaxed">
                 {service.houstonConsiderations}
               </p>
             </div>
 
             {/* Key Benefits Grid */}
             <div className="space-y-4">
-              <h3 className="font-serif text-xl text-gold-100 font-bold">
+              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold leading-snug">
                 Performance Benefits & Lifetime Advantages
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {service.keyBenefits.map((benefit, idx) => (
-                  <div key={idx} className="p-4 bg-mocha-900/90 border border-mocha-800/80 rounded-xl flex items-start gap-3 shadow-sm">
+                  <div key={idx} className="p-4 sm:p-5 bg-mocha-900/90 border border-mocha-800/80 rounded-xl flex items-start gap-3 shadow-sm">
                     <div className="w-5 h-5 rounded-full bg-gold/20 text-gold flex items-center justify-center flex-shrink-0 mt-0.5 border border-gold/40">
                       <Check className="w-3.5 h-3.5 stroke-[3]" />
                     </div>
-                    <span className="text-xs sm:text-sm text-stone-300 font-sans leading-relaxed">
+                    <span className="text-sm sm:text-base text-stone-300 font-sans leading-relaxed">
                       {benefit}
                     </span>
                   </div>
@@ -115,16 +115,16 @@ export const ServiceDetailPage: React.FC<{ slug: PageRoute }> = ({ slug }) => {
 
             {/* Technical Specifications Table */}
             <div className="space-y-4">
-              <h3 className="font-serif text-xl text-gold-100 font-bold">
+              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold leading-snug">
                 Technical Specifications & Testing Standards
               </h3>
               <div className="bg-mocha-900/90 border border-gold/30 rounded-xl overflow-hidden shadow-xl">
-                <table className="w-full text-xs text-left">
+                <table className="w-full text-sm text-left">
                   <tbody className="divide-y divide-mocha-800/80 font-sans">
                     {service.technicalSpecs.map((spec, idx) => (
                       <tr key={idx} className="hover:bg-mocha-850/50 transition-colors">
-                        <td className="py-3 px-4 text-stone-400 font-mono w-1/3">{spec.label}</td>
-                        <td className="py-3 px-4 text-gold-100 font-medium">{spec.value}</td>
+                        <td className="py-3.5 px-5 text-stone-400 font-mono w-1/3">{spec.label}</td>
+                        <td className="py-3.5 px-5 text-gold-100 font-medium">{spec.value}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -135,15 +135,15 @@ export const ServiceDetailPage: React.FC<{ slug: PageRoute }> = ({ slug }) => {
             {/* Service-Specific FAQs */}
             {service.faqList && service.faqList.length > 0 && (
               <div className="space-y-4 pt-4 border-t border-mocha-800/80">
-                <h3 className="font-serif text-xl text-gold-100 font-bold flex items-center gap-2">
+                <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold flex items-center gap-2 leading-snug">
                   <HelpCircle className="w-5 h-5 text-gold" />
                   <span>Frequently Asked Questions About This Service</span>
                 </h3>
-                <div className="space-y-3">
+                <div className="space-y-3.5">
                   {service.faqList.map((faq, idx) => (
-                    <div key={idx} className="bg-mocha-900/90 border border-mocha-800/80 rounded-xl p-5 space-y-2 shadow-md">
-                      <h4 className="font-serif font-bold text-sm text-gold-100">{faq.question}</h4>
-                      <p className="text-xs text-stone-300 leading-relaxed">{faq.answer}</p>
+                    <div key={idx} className="bg-mocha-900/90 border border-mocha-800/80 rounded-xl p-5 sm:p-6 space-y-2 shadow-md">
+                      <h4 className="font-serif font-bold text-base text-gold-100">{faq.question}</h4>
+                      <p className="text-sm sm:text-base text-stone-300 leading-relaxed">{faq.answer}</p>
                     </div>
                   ))}
                 </div>
@@ -184,7 +184,7 @@ export const ServiceDetailPage: React.FC<{ slug: PageRoute }> = ({ slug }) => {
 
               <button
                 onClick={() => openQuoteModal({ service: service.title, material: service.materialsUsed[0] })}
-                className="w-full bg-amber hover:bg-amber-light text-mocha-950 font-bold py-3.5 px-4 rounded-md text-xs uppercase tracking-wider shadow-amber transition-all flex items-center justify-center gap-2"
+                className="min-h-[48px] w-full bg-amber hover:bg-amber-light text-mocha-950 font-bold py-3.5 px-4 rounded-md text-xs uppercase tracking-wider shadow-amber transition-all flex items-center justify-center gap-2"
               >
                 <FileText className="w-4 h-4" />
                 <span>Request {service.title} Quote</span>
@@ -192,7 +192,7 @@ export const ServiceDetailPage: React.FC<{ slug: PageRoute }> = ({ slug }) => {
 
               <a
                 href={`tel:${COMPANY_INFO.phone}`}
-                className="w-full bg-mocha-950 hover:bg-mocha-850 border border-gold/40 text-gold-100 font-semibold py-3 px-4 rounded-md text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+                className="min-h-[48px] w-full bg-mocha-950 hover:bg-mocha-850 border border-gold/40 text-gold-100 font-semibold py-3 px-4 rounded-md text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4 text-gold" />
                 <span>Call {COMPANY_INFO.phoneFormatted}</span>

@@ -80,24 +80,24 @@ export const BunkerHillProjectPage: React.FC = () => {
 
             {/* In-Depth Project Narrative */}
             <div className="space-y-4">
-              <h2 className="font-serif text-2xl text-gold-100 font-bold">
+              <h2 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold leading-snug">
                 Project Overview & Scope of Work
               </h2>
-              <p className="text-sm sm:text-base leading-relaxed text-stone-300">
+              <p className="text-base sm:text-lg leading-relaxed text-stone-300">
                 In October 2022, Jay-Co Enterprises, LLC was awarded the residential re-roofing contract for the luxury estate located at <strong className="text-gold-100">11838 Brandywine Lane</strong> in the City of Bunker Hill Village, Texas. This property is an expansive <strong className="text-gold-100">6,122 square-foot custom residence</strong> situated on a 0.80-acre wooded lot within the prestigious Memorial Villages corridor.
               </p>
-              <p className="text-xs sm:text-sm leading-relaxed text-stone-400">
+              <p className="text-base leading-relaxed text-stone-400">
                 Due to dense pine and oak canopy exposure, the original roof had suffered moisture accumulation, leaf-dam debris pooling, and degraded flashing transitions. Under City of Bunker Hill Village Building Permit <strong className="text-gold">#20220639</strong>, Jay-Co executed a comprehensive tear-off down to the bare wooden decking, inspected all rafter sheathing for moisture soundness, and engineered a complete high-wind roofing system with custom sheet metal flashings shop-fabricated at our Knight Street facility.
               </p>
             </div>
 
             {/* Key Technical Execution Steps */}
             <div className="space-y-4">
-              <h3 className="font-serif text-xl text-gold-100 font-bold">
+              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold leading-snug">
                 Key Technical Execution Milestones
               </h3>
 
-              <div className="space-y-3">
+              <div className="space-y-3.5">
                 {[
                   {
                     title: '100% Tear-Off & Structural Sheathing Inspection',
@@ -116,13 +116,13 @@ export const BunkerHillProjectPage: React.FC = () => {
                     desc: 'Project finalized and recorded complete by the City of Bunker Hill Village on April 27, 2023 with a recorded valuation of $23,752.'
                   }
                 ].map((step, idx) => (
-                  <div key={idx} className="p-4 bg-mocha-900/90 border border-mocha-800/80 rounded-lg flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gold/20 text-gold flex items-center justify-center flex-shrink-0 mt-0.5 font-mono text-xs font-bold border border-gold/40">
+                  <div key={idx} className="p-5 bg-mocha-900/90 border border-mocha-800/80 rounded-lg flex items-start gap-3.5">
+                    <div className="w-6 h-6 rounded-full bg-gold/20 text-gold flex items-center justify-center flex-shrink-0 mt-0.5 font-mono text-xs font-bold border border-gold/40">
                       {idx + 1}
                     </div>
                     <div>
-                      <h4 className="font-serif font-bold text-sm text-gold-100">{step.title}</h4>
-                      <p className="text-xs text-stone-400 mt-0.5 leading-relaxed">{step.desc}</p>
+                      <h4 className="font-serif font-bold text-base text-gold-100">{step.title}</h4>
+                      <p className="text-sm text-stone-300 mt-1 leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 ))}

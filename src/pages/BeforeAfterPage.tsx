@@ -24,7 +24,7 @@ export const BeforeAfterPage: React.FC = () => {
             Before & After Architectural Transformations
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Compare failed, storm-damaged, and caulked flashing assemblies against Jay-Co's precision-engineered standing seam and hand-soldered architectural copper systems.
           </p>
         </div>
@@ -55,15 +55,15 @@ export const BeforeAfterPage: React.FC = () => {
 
         {/* Bottom CTA */}
         <div className="bg-mocha-900/90 border border-gold/30 rounded-xl p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-4 shadow-xl">
-          <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold">
+          <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold leading-snug">
             Is Your Roof Showing Signs of Moisture Intrusion or Age?
           </h3>
-          <p className="text-xs sm:text-sm text-stone-300">
+          <p className="text-base text-stone-300 leading-relaxed max-w-xl mx-auto">
             Schedule an on-site diagnostic inspection with Jay-Co to evaluate wood decking, flashing transitions, and architectural metal options.
           </p>
           <button
             onClick={() => openQuoteModal({ service: 'Roof Transformation Consultation' })}
-            className="bg-amber hover:bg-amber-light text-mocha-950 font-bold px-6 py-3 rounded-md shadow-amber text-xs uppercase tracking-wider transition-all inline-flex items-center gap-2"
+            className="min-h-[44px] bg-amber hover:bg-amber-light text-mocha-950 font-bold px-6 py-3 rounded-md shadow-amber text-xs uppercase tracking-wider transition-all inline-flex items-center gap-2"
           >
             <span>Request Diagnostic Inspection</span>
             <ArrowRight className="w-4 h-4" />

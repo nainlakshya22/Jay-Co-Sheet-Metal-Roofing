@@ -22,7 +22,7 @@ export const QuotePage: React.FC = () => {
             Request an Architectural Roofing Consultation
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Complete our 5-step inquiry workflow. Our senior estimators at the 2307 Knight St shop will review your roof dimensions, architectural preferences, and municipal code requirements.
           </p>
         </div>
@@ -35,14 +35,14 @@ export const QuotePage: React.FC = () => {
         {/* Direct Contact Alternatives */}
         <div className="bg-mocha-900/90 border border-gold/30 rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-xl">
           <div>
-            <h3 className="font-serif font-bold text-lg text-gold-100">Prefer Direct Phone Consultation?</h3>
-            <p className="text-xs text-stone-400 mt-1">
+            <h3 className="font-serif font-bold text-xl text-gold-100">Prefer Direct Phone Consultation?</h3>
+            <p className="text-sm text-stone-300 mt-1 leading-relaxed">
               Speak directly with our Houston estimating desk at (713) 738-4525.
             </p>
           </div>
           <a
             href={`tel:${COMPANY_INFO.phone}`}
-            className="bg-mocha-950 hover:bg-mocha-850 border border-gold/40 text-gold px-6 py-3 rounded-lg text-xs uppercase tracking-wider font-bold transition-colors flex items-center gap-2"
+            className="min-h-[48px] bg-mocha-950 hover:bg-mocha-850 border border-gold/40 text-gold px-6 py-3 rounded-lg text-xs uppercase tracking-wider font-bold transition-colors flex items-center gap-2"
           >
             <Phone className="w-4 h-4 text-amber" />
             <span>Call {COMPANY_INFO.phoneFormatted}</span>

@@ -25,7 +25,7 @@ export const ReviewsPage: React.FC = () => {
             Client Reviews & GAF Network Feedback
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Read verified public feedback recorded across our official GAF contractor network profile and Google business directory records for Jay-Co Enterprises, LLC.
           </p>
         </div>
@@ -37,11 +37,11 @@ export const ReviewsPage: React.FC = () => {
 
         {/* Trust & Methodology Notice */}
         <div className="bg-mocha-900/90 border border-gold/30 rounded-xl p-6 sm:p-8 space-y-4 max-w-4xl mx-auto shadow-xl">
-          <h3 className="font-serif text-lg font-bold text-gold-100 flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-gold" />
+          <h3 className="font-serif text-xl font-bold text-gold-100 flex items-center gap-2 leading-snug">
+            <ShieldCheck className="w-5 h-5 text-gold flex-shrink-0" />
             <span>Our Review Authenticity Commitment</span>
           </h3>
-          <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+          <p className="text-sm sm:text-base text-stone-300 leading-relaxed">
             In compliance with truth-in-advertising guidelines, Jay-Co Sheet Metal & Roofing does not create fictional customer testimonials, alter star ratings, or purchase commercial review generation packages. Reviews displayed on this platform are drawn directly from public Google and GAF contractor directory sources (holding an aggregate 4.5/5.0 score across 13 recorded ratings). This display reflects a curated static snapshot; dynamic Google Places API integration can be configured via environment credentials.
           </p>
           <div className="pt-2 flex flex-wrap gap-4 text-xs font-mono">
@@ -49,7 +49,7 @@ export const ReviewsPage: React.FC = () => {
               href="https://www.gaf.com/en-us/roofing-contractors/residential/usa/tx/houston/jay-co-sheet-metal-and-roofing-1132527"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gold hover:underline flex items-center gap-1"
+              className="min-h-[44px] text-gold hover:underline flex items-center gap-1.5"
             >
               <span>View GAF Profile #1132527</span>
               <ExternalLink className="w-3.5 h-3.5" />

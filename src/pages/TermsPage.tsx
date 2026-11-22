@@ -25,30 +25,30 @@ export const TermsPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="space-y-8 text-xs sm:text-sm text-stone-300 leading-relaxed font-sans border-t border-mocha-800/80 pt-8">
+        <div className="space-y-8 text-base text-stone-300 leading-relaxed font-sans border-t border-mocha-800/80 pt-8">
           <section className="space-y-3">
-            <h2 className="font-serif text-xl font-bold text-gold-100">1. Website Scope & Factual Representation</h2>
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-gold-100 leading-snug">1. Website Scope & Factual Representation</h2>
             <p>
               This website is operated by Jay-Co Enterprises, LLC (operating as Jay-Co Sheet Metal & Roofing), with principal facilities located at 2307 Knight St, Houston, TX 77093. Content is provided for informational and architectural planning purposes.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-xl font-bold text-gold-100">2. Online Roof Estimator & Financing Disclaimer</h2>
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-gold-100 leading-snug">2. Online Roof Estimator & Financing Disclaimer</h2>
             <p>
               Calculations displayed via the Interactive Roof Estimator and Financing Calculator are illustrative budgeting estimates based on regional averages. They <strong>do not constitute binding contractual quotations</strong>, guarantees of pricing, or loan approvals. All formal roofing contracts require an on-site physical diagnostic survey and signed work authorization.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-xl font-bold text-gold-100">3. Domain Disambiguation Notice</h2>
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-gold-100 leading-snug">3. Domain Disambiguation Notice</h2>
             <p>
               The domain name <em>jay-co.com</em> historically and currently belongs to an unrelated underground directional boring entity based in Missouri. Jay-Co Sheet Metal & Roofing has no legal, corporate, or financial affiliation with that business.
             </p>
           </section>
 
           <section className="space-y-3">
-            <h2 className="font-serif text-xl font-bold text-gold-100">4. Governing Law</h2>
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-gold-100 leading-snug">4. Governing Law</h2>
             <p>
               All interactions, contracts, and municipal permitting matters are governed under the laws of the State of Texas and Harris County building codes.
             </p>

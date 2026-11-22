@@ -30,20 +30,20 @@ export const FaqPage: React.FC = () => {
             Frequently Asked Questions & Technical Specifications
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Search our comprehensive knowledge base regarding standing seam engineering, GAF warranty protection, municipal permit filings, and copper fabrication.
           </p>
         </div>
 
         {/* Search Bar */}
         <div className="relative mb-12">
-          <Search className="w-5 h-5 text-gold absolute left-4 top-3.5" />
+          <Search className="w-5 h-5 text-gold absolute left-4 top-4" />
           <input
             type="text"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
             placeholder="Search questions by topic (e.g. GAF, permit, copper, standing seam, price)..."
-            className="w-full bg-mocha-900/90 border border-gold/30 rounded-xl py-3 pl-12 pr-4 text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 shadow-lg"
+            className="w-full bg-mocha-900/90 border border-gold/30 rounded-xl py-3.5 pl-12 pr-4 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 shadow-lg"
           />
         </div>
 
@@ -53,19 +53,19 @@ export const FaqPage: React.FC = () => {
               Search Results ({filteredFaqs.length} Found)
             </h3>
             {filteredFaqs.length > 0 ? (
-              <div className="space-y-3">
+              <div className="space-y-3.5">
                 {filteredFaqs.map((faq, idx) => (
-                  <div key={idx} className="bg-mocha-900/90 border border-mocha-800/80 rounded-xl p-6 space-y-2 shadow-lg">
+                  <div key={idx} className="bg-mocha-900/90 border border-mocha-800/80 rounded-xl p-6 sm:p-7 space-y-2.5 shadow-lg">
                     <span className="text-[10px] bg-mocha-950 text-gold px-2.5 py-1 rounded font-mono border border-gold/20">
                       {faq.category}
                     </span>
-                    <h4 className="font-serif font-bold text-base text-gold-100">{faq.question}</h4>
-                    <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">{faq.answer}</p>
+                    <h4 className="font-serif font-bold text-lg text-gold-100 leading-snug">{faq.question}</h4>
+                    <p className="text-sm sm:text-base text-stone-300 leading-relaxed">{faq.answer}</p>
                   </div>
                 ))}
               </div>
             ) : (
-              <div className="p-8 bg-mocha-900/80 border border-mocha-800 rounded-xl text-center text-xs text-stone-400">
+              <div className="p-8 bg-mocha-900/80 border border-mocha-800 rounded-xl text-center text-sm text-stone-400">
                 No matching questions found. Try searching for "standing seam", "GAF", or "permit".
               </div>
             )}

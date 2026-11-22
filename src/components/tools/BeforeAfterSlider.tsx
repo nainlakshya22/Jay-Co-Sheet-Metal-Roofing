@@ -75,25 +75,27 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
 
   return (
     <div className="bg-mocha-900 border border-gold/30 rounded-sm shadow-luxury p-6 sm:p-10">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-mocha-800 pb-6 mb-8">
-        <div>
-          <div className="flex items-center gap-2 mb-2">
+      <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 border-b border-mocha-800 pb-8 mb-8">
+        <div className="space-y-2 max-w-2xl">
+          <div className="flex items-center gap-2">
             <span className="p-1.5 bg-mocha-850 text-gold rounded border border-gold/30">
               <ArrowLeftRight className="w-4 h-4 text-amber" />
             </span>
-            <span className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
+            <span className="text-xs font-mono uppercase tracking-wider text-gold font-semibold">
               Interactive Craftsmanship Comparison
             </span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-3xl text-ivory font-bold">
+          <h2 className="font-serif text-3xl sm:text-4xl text-ivory font-bold leading-tight">
             {title}
           </h2>
-          <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-2xl">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans pt-1">
             {description}
           </p>
         </div>
-        <div className="text-right hidden md:block">
-          <span className="text-xs text-stone-400 font-mono">Drag divider or use arrows</span>
+        <div className="text-right hidden md:block flex-shrink-0">
+          <span className="text-xs text-stone-400 font-mono bg-mocha-950 px-3 py-1.5 rounded border border-mocha-800">
+            Drag divider or use ← / → arrows
+          </span>
         </div>
       </div>
 
@@ -111,7 +113,11 @@ export const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({
         }}
         onKeyDown={handleKeyDown}
         tabIndex={0}
-        aria-label="Before and after transformation slider"
+        role="slider"
+        aria-valuenow={Math.round(sliderPosition)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label="Before and after transformation comparison slider"
       >
         {/* AFTER IMAGE (Background / Full Width) */}
         <img

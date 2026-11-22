@@ -24,7 +24,7 @@ export const ProjectsPage: React.FC = () => {
             Our Architectural Projects & Documented Municipal Records
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Explore authentic completed roofing and architectural sheet metal projects across Houston, backed by verified municipal building permits and Knight Street shop fabrication.
           </p>
         </div>
@@ -36,17 +36,17 @@ export const ProjectsPage: React.FC = () => {
               <FileCheck className="w-4 h-4 text-amber" />
               <span>Documented Public Building Record</span>
             </div>
-            <h3 className="font-serif text-2xl font-bold text-gold-100">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gold-100 leading-snug">
               City of Bunker Hill Village Permit #20220639
             </h3>
-            <p className="text-xs sm:text-sm text-stone-400 max-w-xl">
+            <p className="text-sm sm:text-base text-stone-300 max-w-xl leading-relaxed">
               11838 Brandywine Ln, Houston, TX 77024 — Complete residential re-roof on a 6,122 sq. ft. luxury wooded Memorial estate. Recorded completion April 27, 2023. Valuation: $23,752.
             </p>
           </div>
 
           <button
             onClick={() => navigateTo('project-bunker-hill')}
-            className="bg-amber hover:bg-amber-light text-mocha-950 font-bold px-6 py-3 rounded-md text-xs uppercase tracking-wider shadow-amber transition-all flex items-center gap-2 flex-shrink-0"
+            className="min-h-[44px] bg-amber hover:bg-amber-light text-mocha-950 font-bold px-6 py-3 rounded-md text-xs uppercase tracking-wider shadow-amber transition-all flex items-center gap-2 flex-shrink-0"
           >
             <span>Read Case Study</span>
             <ArrowRight className="w-4 h-4" />

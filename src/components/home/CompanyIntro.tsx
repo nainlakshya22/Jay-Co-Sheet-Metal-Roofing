@@ -17,27 +17,27 @@ export const CompanyIntro: React.FC = () => {
           <div className="lg:col-span-6 space-y-6">
             <div className="flex items-center gap-2">
               <span className="w-8 h-[1px] bg-gold" />
-              <span className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
+              <span className="text-xs font-mono uppercase tracking-wider text-gold font-semibold">
                 Houston Fabrication Authority
               </span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ivory font-bold leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-ivory font-bold leading-[1.16]">
               Where Heavy Metal Machinery Meets Architectural Precision.
             </h2>
 
-            <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
-              Most roofing companies operate as sales brokers—outsourcing fabrication to generic supply houses. At Jay-Co Sheet Metal & Roofing, we operate our own full-scale architectural sheet metal facility at <strong className="text-gold">2307 Knight St in Houston, Texas</strong>.
+            <p className="text-base sm:text-lg text-stone-200 leading-[1.75] font-sans">
+              Most roofing companies operate as sales brokers—outsourcing fabrication to generic supply houses. At Jay-Co Sheet Metal & Roofing, we operate our own full-scale architectural sheet metal facility at <strong className="text-gold font-medium">2307 Knight St in Houston, Texas</strong>.
             </p>
 
-            <p className="text-sm text-stone-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-stone-300 leading-[1.75]">
               Equipped with industrial bending brakes, shear cutters, and precision roll-formers, our coppersmiths and sheet metal artisans fabricate every custom standing seam panel, soldered chimney cap, continuous copper gutter, and wall coping to the exact millimeter dimensions of your architectural blueprints.
             </p>
 
-            <div className="pt-2 flex flex-wrap gap-4">
+            <div className="pt-2 flex flex-wrap gap-4 items-center">
               <button
                 onClick={() => navigateTo('architectural-metal')}
-                className="bg-mocha-900 hover:bg-mocha-850 border border-gold/40 hover:border-gold text-gold-light hover:text-gold font-semibold px-6 py-3 rounded-sm text-xs uppercase tracking-wider transition-all inline-flex items-center gap-2 gold-border-glow shadow-sm"
+                className="bg-mocha-900 hover:bg-mocha-850 border border-gold/40 hover:border-gold text-gold-light hover:text-gold font-semibold px-6 py-3.5 rounded-sm text-xs uppercase tracking-wider transition-all inline-flex items-center gap-2 gold-border-glow shadow-sm"
               >
                 <span>Tour Our Fabrication Facility</span>
                 <ArrowRight className="w-4 h-4 text-amber" />
@@ -45,7 +45,7 @@ export const CompanyIntro: React.FC = () => {
 
               <button
                 onClick={() => navigateTo('about')}
-                className="text-stone-300 hover:text-gold px-4 py-3 text-xs uppercase tracking-wider font-medium transition-colors"
+                className="text-stone-300 hover:text-gold px-4 py-3.5 text-xs uppercase tracking-wider font-semibold transition-colors"
               >
                 About Our Heritage →
               </button>
@@ -66,7 +66,7 @@ export const CompanyIntro: React.FC = () => {
                 <span className="text-xs font-mono text-gold uppercase tracking-wider block mb-1">
                   Shop Address: 2307 Knight St, Houston, TX 77093
                 </span>
-                <p className="text-xs text-stone-300 font-sans">
+                <p className="text-sm text-stone-200 font-sans leading-relaxed">
                   In-house shearing and brake-forming of 24-ga Galvalume, 16/20-oz cold-rolled copper, stainless steel, and heavy aluminum.
                 </p>
               </div>
@@ -102,15 +102,15 @@ export const CompanyIntro: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="p-6 bg-mocha-900 border border-mocha-800 rounded hover:border-gold/50 transition-all duration-300 space-y-3 hover:-translate-y-1 hover:shadow-luxury group"
+                className="p-6 sm:p-7 bg-mocha-900 border border-mocha-800 rounded hover:border-gold/50 transition-all duration-300 space-y-3.5 hover:-translate-y-1 hover:shadow-luxury group"
               >
-                <div className="w-10 h-10 rounded bg-mocha-850 border border-gold/30 flex items-center justify-center text-amber group-hover:border-gold transition-colors">
+                <div className="w-11 h-11 rounded bg-mocha-850 border border-gold/30 flex items-center justify-center text-amber group-hover:border-gold transition-colors">
                   <Icon className="w-5 h-5" />
                 </div>
-                <h3 className="font-serif font-bold text-lg text-ivory group-hover:text-gold transition-colors">
+                <h3 className="font-serif font-bold text-lg sm:text-xl text-ivory group-hover:text-gold transition-colors">
                   {pillar.title}
                 </h3>
-                <p className="text-xs text-stone-300 leading-relaxed">
+                <p className="text-sm text-stone-300 leading-relaxed">
                   {pillar.desc}
                 </p>
               </div>

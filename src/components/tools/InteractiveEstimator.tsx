@@ -117,35 +117,38 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
   };
 
   return (
-    <div className="bg-mocha-900 border border-gold/30 rounded-sm shadow-luxury p-6 sm:p-10">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-mocha-800 pb-6 mb-8">
-        <div>
-          <div className="flex items-center gap-2 mb-2">
+    <div className="bg-mocha-900 border border-gold/30 rounded-sm shadow-luxury p-6 sm:p-10 lg:p-12">
+      <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 border-b border-mocha-800 pb-8 mb-10">
+        <div className="space-y-2 max-w-2xl">
+          <div className="flex items-center gap-2">
             <span className="p-1.5 bg-mocha-850 text-gold rounded border border-gold/30">
               <Calculator className="w-4 h-4 text-amber" />
             </span>
-            <span className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
+            <span className="text-xs font-mono uppercase tracking-wider text-gold font-semibold">
               Interactive Planning Calculator
             </span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-3xl text-ivory font-bold">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-ivory font-bold leading-tight">
             Interactive Roof Investment Estimator
           </h2>
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans pt-1">
+            Calculate preliminary planning estimates for standing seam metal, architectural copper, natural slate, or GAF shingles based on your roof footprint.
+          </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3.5 flex-shrink-0">
           <button
             id="estimator-reset-btn"
             onClick={resetDefaults}
             type="button"
-            className="flex items-center gap-1.5 text-xs text-stone-300 hover:text-gold bg-mocha-850 hover:bg-mocha-800 border border-mocha-700 px-3 py-1.5 rounded transition-colors font-mono"
+            className="flex items-center gap-2 text-xs text-stone-300 hover:text-gold bg-mocha-850 hover:bg-mocha-800 border border-mocha-700 px-3.5 py-2 rounded transition-colors font-mono min-h-[40px]"
             title="Reset calculator inputs to default parameters"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Reset to Defaults</span>
           </button>
           <div className="text-right hidden md:block">
-            <span className="text-xs text-stone-400 block font-mono">Houston Regional Benchmark</span>
-            <span className="text-xs text-gold font-medium">GAF Certified™ Contractor #1132527</span>
+            <span className="text-xs text-stone-400 block font-mono">Houston Benchmark</span>
+            <span className="text-xs text-gold font-mono font-medium">GAF Certified™ #1132527</span>
           </div>
         </div>
       </div>
@@ -260,34 +263,34 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
             <label className="block text-xs font-mono uppercase tracking-wider text-stone-300 mb-2">
               Architectural Material System
             </label>
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               {MATERIALS.map(m => (
                 <button
                   type="button"
                   key={m.id}
                   onClick={() => setSelectedMaterialId(m.id)}
-                  className={`w-full p-3.5 rounded-lg border text-left transition-all flex items-start justify-between gap-3 ${
+                  className={`w-full p-4 rounded-lg border text-left transition-all flex items-start justify-between gap-3 ${
                     selectedMaterialId === m.id
                       ? 'bg-mocha-800 border-gold shadow-gold-sm'
                       : 'bg-mocha-950 border-mocha-800 hover:border-gold/30'
                   }`}
                 >
-                  <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="font-serif font-bold text-sm text-gold-100">{m.name}</span>
-                      <span className="text-[10px] bg-mocha-950 text-gold px-2 py-0.5 rounded font-mono border border-gold/20">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <span className="font-serif font-bold text-base text-ivory">{m.name}</span>
+                      <span className="text-[11px] bg-mocha-950 text-gold px-2 py-0.5 rounded font-mono border border-gold/20">
                         {m.tier}
                       </span>
                     </div>
-                    <p className="text-xs text-stone-400">{m.description}</p>
-                    <div className="flex items-center gap-4 text-[11px] font-mono text-stone-400 mt-2">
-                      <span>Lifespan: <strong className="text-stone-300">{m.lifespan}</strong></span>
-                      <span>Wind: <strong className="text-stone-300">{m.windRating}</strong></span>
+                    <p className="text-sm text-stone-300 leading-relaxed font-sans">{m.description}</p>
+                    <div className="flex items-center gap-4 text-xs font-mono text-stone-400 pt-1">
+                      <span>Lifespan: <strong className="text-stone-200">{m.lifespan}</strong></span>
+                      <span>Wind: <strong className="text-stone-200">{m.windRating}</strong></span>
                     </div>
                   </div>
                   {selectedMaterialId === m.id && (
-                    <div className="p-1 bg-copper text-charcoal-950 rounded-full flex-shrink-0 mt-1">
-                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    <div className="p-1 bg-amber text-mocha-950 rounded-full flex-shrink-0 mt-1">
+                      <Check className="w-4 h-4 stroke-[3]" />
                     </div>
                   )}
                 </button>
@@ -300,28 +303,28 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
         <div className="lg:col-span-5 flex flex-col justify-between">
           <div className="bg-mocha-950 border border-gold/40 rounded p-6 sm:p-8 space-y-6 shadow-luxury">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-stone-400 block mb-1">
+              <span className="text-xs font-mono uppercase tracking-wider text-stone-400 block mb-1">
                 Estimated Planning Range
               </span>
               <div className="flex flex-wrap items-baseline gap-2">
-                <span id="estimator-min-price" className="font-serif text-2xl sm:text-4xl font-bold text-gold">
+                <span id="estimator-min-price" className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gold">
                   ${calculations.minFormatted}
                 </span>
-                <span className="text-stone-400 font-serif text-xl sm:text-2xl">–</span>
-                <span id="estimator-max-price" className="font-serif text-2xl sm:text-4xl font-bold text-ivory">
+                <span className="text-stone-400 font-serif text-2xl sm:text-3xl">–</span>
+                <span id="estimator-max-price" className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-ivory">
                   ${calculations.maxFormatted}
                 </span>
               </div>
-              <p className="text-xs text-stone-400 mt-1 font-mono">
+              <p className="text-sm text-stone-300 mt-1 font-mono">
                 Approx. ${calculations.minPerSqFt} – ${calculations.maxPerSqFt} per sq. ft. installed
               </p>
             </div>
 
             {/* Parameter Summary */}
-            <div className="space-y-2 text-xs border-t border-b border-mocha-800 py-4">
+            <div className="space-y-2.5 text-sm border-t border-b border-mocha-800 py-4">
               <div className="flex justify-between">
                 <span className="text-stone-400">Selected Material:</span>
-                <span className="text-ivory font-medium text-right max-w-[200px] truncate">
+                <span className="text-ivory font-medium text-right max-w-[220px] truncate">
                   {selectedMaterial.name}
                 </span>
               </div>
@@ -339,14 +342,14 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
               </div>
               <div className="flex justify-between">
                 <span className="text-stone-400">Shop Flashing:</span>
-                <span className="text-gold font-medium">Knight St In-House Brake Fabricated</span>
+                <span className="text-gold font-medium">Knight St Shop Fabricated</span>
               </div>
             </div>
 
             {/* Compulsory Disclaimer */}
-            <div className="bg-mocha-900 border border-amber/30 p-3.5 rounded text-xs text-stone-300 space-y-1.5 leading-relaxed">
+            <div className="bg-mocha-900 border border-amber/30 p-4 rounded text-xs text-stone-300 space-y-1.5 leading-relaxed">
               <div className="flex items-center gap-1.5 text-amber font-semibold uppercase tracking-wider text-xs">
-                <ShieldAlert className="w-3.5 h-3.5 flex-shrink-0" />
+                <ShieldAlert className="w-4 h-4 flex-shrink-0" />
                 <span>Illustrative Planning Basis Only</span>
               </div>
               <p>
@@ -357,7 +360,7 @@ export const InteractiveEstimator: React.FC<{ compact?: boolean }> = ({ compact 
             {/* Direct CTA */}
             <button
               onClick={handleTransferToQuote}
-              className="w-full amber-button-glow font-bold py-3.5 px-6 rounded-sm text-xs uppercase tracking-wider flex items-center justify-center gap-2 relative-shimmer group"
+              className="w-full min-h-[48px] amber-button-glow font-bold py-3.5 px-6 rounded-sm text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 relative-shimmer group shadow-amber"
             >
               <span>Transfer to Detailed Quote Request</span>
               <ArrowRight className="w-4 h-4 text-mocha-950 transition-transform group-hover:translate-x-1" />

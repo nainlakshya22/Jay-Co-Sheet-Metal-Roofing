@@ -81,14 +81,14 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <p className="text-xs leading-relaxed text-stone-300">
+          <p className="text-sm leading-relaxed text-stone-300">
             Houston's trusted architectural sheet metal fabricator and roofing contractor. From our 2307 Knight St fabrication shop, we deliver custom-folded 24-gauge standing seam metal, hand-soldered architectural copper, genuine slate, and GAF certified residential systems.
           </p>
 
-          <div className="space-y-2 pt-2 text-xs">
+          <div className="space-y-2.5 pt-2 text-sm">
             <div className="flex items-start gap-2.5">
-              <MapPin className="w-4 h-4 text-amber flex-shrink-0 mt-0.5" />
-              <span>{COMPANY_INFO.address}, {COMPANY_INFO.city}, {COMPANY_INFO.state} {COMPANY_INFO.zip}</span>
+              <MapPin className="w-4 h-4 text-amber flex-shrink-0 mt-1" />
+              <span className="leading-relaxed">{COMPANY_INFO.address}, {COMPANY_INFO.city}, {COMPANY_INFO.state} {COMPANY_INFO.zip}</span>
             </div>
             <div className="flex items-center gap-2.5">
               <Phone className="w-4 h-4 text-amber flex-shrink-0" />
@@ -111,9 +111,9 @@ export const Footer: React.FC = () => {
           <div className="pt-2">
             <button
               onClick={openAssistant}
-              className="inline-flex items-center gap-2 bg-mocha-900 border border-gold/40 hover:border-gold px-3 py-1.5 rounded text-xs text-gold font-medium transition-colors gold-border-glow"
+              className="min-h-[44px] inline-flex items-center gap-2 bg-mocha-900 border border-gold/40 hover:border-gold px-3.5 py-2 rounded text-xs sm:text-sm text-gold font-medium transition-colors gold-border-glow"
             >
-              <Sparkles className="w-3.5 h-3.5 text-amber" />
+              <Sparkles className="w-4 h-4 text-amber" />
               <span>Ask Jay-Co Architectural Assistant</span>
             </button>
           </div>
@@ -121,10 +121,10 @@ export const Footer: React.FC = () => {
 
         {/* Column 2: Roofing Systems */}
         <div className="space-y-3">
-          <h4 className="font-serif text-gold font-semibold text-sm tracking-wide border-b border-mocha-800 pb-2">
+          <h4 className="font-serif text-gold font-semibold text-base tracking-wide border-b border-mocha-800 pb-2">
             Roofing Systems
           </h4>
-          <ul className="space-y-1 text-xs">
+          <ul className="space-y-1 text-sm">
             <li>
               <button onClick={() => navigateTo('service-standing-seam')} className="hover:text-gold py-1.5 transition-colors text-left block w-full text-stone-300">
                 Standing Seam Metal Roofing
@@ -170,10 +170,10 @@ export const Footer: React.FC = () => {
 
         {/* Column 3: Metal Fabrication */}
         <div className="space-y-3">
-          <h4 className="font-serif text-gold font-semibold text-sm tracking-wide border-b border-mocha-800 pb-2">
+          <h4 className="font-serif text-gold font-semibold text-base tracking-wide border-b border-mocha-800 pb-2">
             Shop Fabrication
           </h4>
-          <ul className="space-y-1 text-xs">
+          <ul className="space-y-1 text-sm">
             <li>
               <button onClick={() => navigateTo('architectural-metal')} className="hover:text-gold py-1.5 transition-colors text-left block w-full text-stone-300">
                 Knight St Shop Facility
@@ -214,10 +214,10 @@ export const Footer: React.FC = () => {
 
         {/* Column 4: Trust & Navigation */}
         <div className="space-y-3">
-          <h4 className="font-serif text-gold font-semibold text-sm tracking-wide border-b border-mocha-800 pb-2">
+          <h4 className="font-serif text-gold font-semibold text-base tracking-wide border-b border-mocha-800 pb-2">
             Company & Trust
           </h4>
-          <ul className="space-y-1 text-xs">
+          <ul className="space-y-1 text-sm">
             <li>
               <button onClick={() => navigateTo('about')} className="hover:text-gold py-1.5 transition-colors text-left block w-full text-stone-300">
                 About Jay-Co
@@ -235,7 +235,7 @@ export const Footer: React.FC = () => {
             </li>
             <li>
               <button onClick={() => navigateTo('project-bunker-hill')} className="hover:text-gold py-1.5 transition-colors text-left flex items-center gap-1 text-gold font-medium block w-full">
-                <FileCheck className="w-3 h-3 text-amber flex-shrink-0 inline" />
+                <FileCheck className="w-3.5 h-3.5 text-amber flex-shrink-0 inline" />
                 <span>Bunker Hill Case Study</span>
               </button>
             </li>
@@ -287,16 +287,16 @@ export const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p>© {new Date().getFullYear()} Jay-Co Enterprises, LLC. All rights reserved. Houston, Texas.</p>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2">
-            <button onClick={() => navigateTo('privacy')} className="hover:text-gold py-1 transition-colors">
+            <button onClick={() => navigateTo('privacy')} className="hover:text-gold py-2 px-1 transition-colors">
               Privacy Policy
             </button>
-            <button onClick={() => navigateTo('terms')} className="hover:text-gold py-1 transition-colors">
+            <button onClick={() => navigateTo('terms')} className="hover:text-gold py-2 px-1 transition-colors">
               Terms of Service
             </button>
-            <button onClick={() => navigateTo('faqs')} className="hover:text-gold py-1 transition-colors">
+            <button onClick={() => navigateTo('faqs')} className="hover:text-gold py-2 px-1 transition-colors">
               FAQs
             </button>
-            <button onClick={() => navigateTo('contact')} className="hover:text-gold py-1 transition-colors font-medium">
+            <button onClick={() => navigateTo('contact')} className="hover:text-gold py-2 px-1 transition-colors font-medium">
               Contact Shop
             </button>
           </div>

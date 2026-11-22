@@ -165,23 +165,23 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
         <span className="font-mono text-xs uppercase tracking-wider text-gold bg-mocha-950 px-3 py-1 rounded border border-gold/30">
           Inquiry Ref #{confirmationId}
         </span>
-        <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold mt-4 mb-3">
+        <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold mt-4 mb-3 leading-tight">
           Architectural Consultation Request Received
         </h3>
-        <p className="text-sm text-stone-300 max-w-lg mx-auto leading-relaxed mb-6">
-          Thank you, <strong className="text-gold-100">{formData.fullName}</strong>. Our senior roofing estimators at the 2307 Knight St shop are reviewing your inquiry for <strong className="text-gold">{formData.projectType}</strong> in <strong className="text-gold-100">{formData.neighborhood}</strong>.
+        <p className="text-base text-stone-300 max-w-lg mx-auto leading-relaxed mb-6">
+          Thank you, <strong className="text-gold-100">{formData.fullName}</strong>. Our senior roofing estimators at our 2307 Knight St shop are reviewing your inquiry for <strong className="text-gold">{formData.projectType}</strong> in <strong className="text-gold-100">{formData.neighborhood}</strong>.
         </p>
 
-        <div className="bg-mocha-950 border border-gold/25 p-4 rounded-lg text-left max-w-md mx-auto text-xs space-y-2 mb-6 shadow-inner">
-          <div className="flex justify-between border-b border-mocha-800/80 pb-1.5">
+        <div className="bg-mocha-950 border border-gold/25 p-5 rounded-lg text-left max-w-md mx-auto text-sm space-y-2.5 mb-6 shadow-inner">
+          <div className="flex justify-between border-b border-mocha-800/80 pb-2">
             <span className="text-stone-400">Selected Material:</span>
             <span className="text-gold-100 font-medium">{formData.materialPreference}</span>
           </div>
-          <div className="flex justify-between border-b border-mocha-800/80 pb-1.5">
+          <div className="flex justify-between border-b border-mocha-800/80 pb-2">
             <span className="text-stone-400">Approx. Roof Size:</span>
             <span className="text-gold-100 font-medium">{formData.approxSqFt}</span>
           </div>
-          <div className="flex justify-between border-b border-mocha-800/80 pb-1.5">
+          <div className="flex justify-between border-b border-mocha-800/80 pb-2">
             <span className="text-stone-400">Preferred Contact:</span>
             <span className="text-gold-100 font-medium">{formData.preferredContact} ({formData.phone})</span>
           </div>
@@ -191,7 +191,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
           </div>
         </div>
 
-        <p className="text-xs text-stone-400 mb-6">
+        <p className="text-sm text-stone-400 mb-6 leading-relaxed">
           Need immediate assistance or emergency storm diagnosis? Call directly at{' '}
           <a href={`tel:${COMPANY_INFO.phone}`} className="text-gold font-semibold underline hover:text-gold-light">
             {COMPANY_INFO.phoneFormatted}
@@ -201,7 +201,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
         {isModal && onClose && (
           <button
             onClick={onClose}
-            className="bg-mocha-800 hover:bg-mocha-700 text-gold-100 px-6 py-2.5 rounded-md text-xs uppercase tracking-wider font-semibold transition-colors border border-gold/30"
+            className="min-h-[44px] bg-mocha-800 hover:bg-mocha-700 text-gold-100 px-6 py-2.5 rounded-md text-xs uppercase tracking-wider font-semibold transition-colors border border-gold/30"
           >
             Close Window
           </button>
@@ -237,10 +237,10 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
         {step === 1 && (
           <div className="space-y-4 animate-fadeIn">
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1">
+              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1 leading-snug">
                 What architectural roofing or fabrication service do you require?
               </h3>
-              <p className="text-xs text-stone-400">
+              <p className="text-sm text-stone-300 leading-relaxed">
                 Select the primary scope for your residential estate or custom commercial structure.
               </p>
             </div>
@@ -253,14 +253,14 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                 { title: 'Slate & Tile Roofing', desc: 'S-1 Vermont slate & architectural clay tile' },
                 { title: 'Composition Shingles (GAF)', desc: 'Timberline HDZ with System Plus warranty' },
                 { title: 'Custom Shop Fabrication', desc: 'Brake-formed chimney caps, coping & scuppers' },
-                { title: 'Gutters & Downspouts', desc: '6\" half-round seamless copper & aluminum' },
+                { title: 'Gutters & Downspouts', desc: '6" half-round seamless copper & aluminum' },
                 { title: 'Leak Diagnostic & Repair', desc: 'Surgical flashing remediation & diagnostics' },
               ].map(item => (
                 <button
                   type="button"
                   key={item.title}
                   onClick={() => setFormData({ ...formData, projectType: item.title })}
-                  className={`p-3.5 text-left rounded-lg border transition-all ${
+                  className={`min-h-[64px] p-4 text-left rounded-lg border transition-all ${
                     formData.projectType === item.title
                       ? 'bg-mocha-800 border-gold shadow-gold-sm text-gold-100'
                       : 'bg-mocha-950/80 border-mocha-800 hover:border-gold/30 text-stone-300'
@@ -269,10 +269,10 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                   <div className="flex items-center justify-between mb-1">
                     <span className="font-medium text-sm text-gold-100">{item.title}</span>
                     {formData.projectType === item.title && (
-                      <Check className="w-4 h-4 text-gold" />
+                      <Check className="w-4 h-4 text-gold flex-shrink-0" />
                     )}
                   </div>
-                  <p className="text-xs text-stone-400">{item.desc}</p>
+                  <p className="text-xs text-stone-400 leading-normal">{item.desc}</p>
                 </button>
               ))}
             </div>
@@ -289,28 +289,28 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
         {step === 2 && (
           <div className="space-y-4 animate-fadeIn">
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1">
+              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1 leading-snug">
                 Where is the project located?
               </h3>
-              <p className="text-xs text-stone-400">
+              <p className="text-sm text-stone-300 leading-relaxed">
                 Helps us determine municipal permitting requirements and local wind velocity codes.
               </p>
             </div>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3.5 pt-2">
               <div>
                 <label htmlFor="quote-address" className="block text-xs font-mono uppercase tracking-wider text-stone-300 mb-1.5">
                   Street Address / Subdivision *
                 </label>
                 <div className="relative">
-                  <MapPin className="w-4 h-4 text-gold absolute left-3 top-3" />
+                  <MapPin className="w-4 h-4 text-gold absolute left-3.5 top-3.5" />
                   <input
                     id="quote-address"
                     type="text"
                     value={formData.streetAddress}
                     onChange={e => setFormData({ ...formData, streetAddress: e.target.value })}
                     placeholder="e.g. 11838 Brandywine Ln or Memorial Way"
-                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 pl-10 pr-4 text-base sm:text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 pl-11 pr-4 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                   />
                 </div>
                 {errors.streetAddress && (
@@ -318,7 +318,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                 )}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
                   <label className="block text-xs font-mono uppercase tracking-wider text-stone-300 mb-1.5">
                     Houston Neighborhood / ZIP *
@@ -326,7 +326,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                   <select
                     value={formData.neighborhood}
                     onChange={e => setFormData({ ...formData, neighborhood: e.target.value })}
-                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-base sm:text-sm text-gold-100 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                   >
                     <option value="Bunker Hill Village (77024)">Bunker Hill Village (77024)</option>
                     <option value="Memorial / Hunters Creek (77024/77079)">Memorial / Hunters Creek</option>
@@ -347,7 +347,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                   <select
                     value={formData.propertyType}
                     onChange={e => setFormData({ ...formData, propertyType: e.target.value })}
-                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-base sm:text-sm text-gold-100 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                   >
                     <option value="Single Family Luxury Estate">Single Family Luxury Estate</option>
                     <option value="Historic Landmark / Custom Home">Historic Landmark / Custom Home</option>
@@ -367,7 +367,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                       type="button"
                       key={size}
                       onClick={() => setFormData({ ...formData, approxSqFt: size })}
-                      className={`min-h-[44px] p-2.5 text-xs rounded-lg border text-center flex items-center justify-center transition-all ${
+                      className={`min-h-[44px] p-2.5 text-xs sm:text-sm rounded-lg border text-center flex items-center justify-center transition-all ${
                         formData.approxSqFt === size
                           ? 'bg-mocha-800 border-gold text-gold font-medium shadow-sm'
                           : 'bg-mocha-950 border-mocha-800 text-stone-300 hover:border-gold/30'
@@ -386,15 +386,15 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
         {step === 3 && (
           <div className="space-y-4 animate-fadeIn">
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1">
+              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1 leading-snug">
                 Material Preferences & Project Specifics
               </h3>
-              <p className="text-xs text-stone-400">
+              <p className="text-sm text-stone-300 leading-relaxed">
                 Specify architectural alloys, shingle lines, or specific fabrication blueprints.
               </p>
             </div>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3.5 pt-2">
               <div>
                 <label className="block text-xs font-mono uppercase tracking-wider text-stone-300 mb-1.5">
                   Material Specification *
@@ -402,7 +402,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                 <select
                   value={formData.materialPreference}
                   onChange={e => setFormData({ ...formData, materialPreference: e.target.value })}
-                  className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-base sm:text-sm text-gold-100 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                  className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                 >
                   <option value="24-Ga Standing Seam Kynar 500 (Galvalume)">24-Ga Standing Seam Kynar 500 (Galvalume)</option>
                   <option value="16-oz / 20-oz Cold-Rolled Natural Copper">16-oz / 20-oz Cold-Rolled Natural Copper</option>
@@ -426,7 +426,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                       type="button"
                       key={time}
                       onClick={() => setFormData({ ...formData, timeline: time })}
-                      className={`p-2.5 text-xs rounded-lg border text-center transition-all ${
+                      className={`min-h-[44px] p-3 text-xs sm:text-sm rounded-lg border text-center flex items-center justify-center transition-all ${
                         formData.timeline === time
                           ? 'bg-mocha-800 border-gold text-gold font-medium'
                           : 'bg-mocha-950 border-mocha-800 text-stone-300 hover:border-gold/30'
@@ -447,7 +447,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                   value={formData.projectNotes}
                   onChange={e => setFormData({ ...formData, projectNotes: e.target.value })}
                   placeholder="Detail any specific roof pitches, custom chimney caps, copper dormers, or architect blueprints..."
-                  className="w-full bg-mocha-950 border border-mocha-800 rounded-lg p-3 text-base sm:text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                  className="w-full bg-mocha-950 border border-mocha-800 rounded-lg p-3.5 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                 />
               </div>
             </div>
@@ -458,15 +458,15 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
         {step === 4 && (
           <div className="space-y-4 animate-fadeIn">
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1">
+              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1 leading-snug">
                 Where should we send the detailed consultation scope?
               </h3>
-              <p className="text-xs text-stone-400">
+              <p className="text-sm text-stone-300 leading-relaxed">
                 Your contact details are kept strictly confidential under our privacy standards.
               </p>
             </div>
 
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3.5 pt-2">
               <div>
                 <label htmlFor="quote-name" className="block text-xs font-mono uppercase tracking-wider text-stone-300 mb-1.5">
                   Full Name *
@@ -477,12 +477,12 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                   value={formData.fullName}
                   onChange={e => setFormData({ ...formData, fullName: e.target.value })}
                   placeholder="e.g. Robert Sterling"
-                  className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-base sm:text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                  className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                 />
                 {errors.fullName && <p className="text-xs text-red-400 mt-1">{errors.fullName}</p>}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
                   <label htmlFor="quote-phone" className="block text-xs font-mono uppercase tracking-wider text-stone-300 mb-1.5">
                     Direct Phone Number *
@@ -493,7 +493,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                     value={formData.phone}
                     onChange={e => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="(713) 555-0192"
-                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-base sm:text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                   />
                   {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone}</p>}
                 </div>
@@ -508,7 +508,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                     value={formData.email}
                     onChange={e => setFormData({ ...formData, email: e.target.value })}
                     placeholder="rsterling@houston.com"
-                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-base sm:text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                   />
                   {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email}</p>}
                 </div>
@@ -524,7 +524,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
                       type="button"
                       key={pref}
                       onClick={() => setFormData({ ...formData, preferredContact: pref })}
-                      className={`p-2.5 text-xs rounded-lg border text-center transition-all ${
+                      className={`min-h-[44px] p-2.5 text-xs sm:text-sm rounded-lg border text-center flex items-center justify-center transition-all ${
                         formData.preferredContact === pref
                           ? 'bg-mocha-800 border-gold text-gold font-medium'
                           : 'bg-mocha-950 border-mocha-800 text-stone-300 hover:border-gold/30'
@@ -543,15 +543,15 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
         {step === 5 && (
           <div className="space-y-4 animate-fadeIn">
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1">
+              <h3 className="font-serif text-xl sm:text-2xl text-gold-100 font-bold mb-1 leading-snug">
                 Review Your Consultation Request
               </h3>
-              <p className="text-xs text-stone-400">
+              <p className="text-sm text-stone-300 leading-relaxed">
                 Please verify your details before transmitting to Jay-Co's Knight St fabrication estimating desk.
               </p>
             </div>
 
-            <div className="bg-mocha-950 border border-gold/25 rounded-lg p-4 text-xs space-y-2.5">
+            <div className="bg-mocha-950 border border-gold/25 rounded-lg p-5 text-sm space-y-3">
               <div className="flex justify-between border-b border-mocha-800/80 pb-2">
                 <span className="text-stone-400">Project Type:</span>
                 <span className="text-gold font-semibold">{formData.projectType}</span>
@@ -583,15 +583,15 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
               {formData.projectNotes && (
                 <div className="pt-2 border-t border-mocha-800/80">
                   <span className="text-stone-400 block mb-1">Notes:</span>
-                  <p className="text-stone-300 italic">{formData.projectNotes}</p>
+                  <p className="text-stone-300 italic leading-relaxed">{formData.projectNotes}</p>
                 </div>
               )}
             </div>
 
-            <div className="bg-mocha-950 border border-amber/30 p-3 rounded-lg text-[11px] text-stone-400 flex items-start gap-2">
-              <ShieldCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-              <span>
-                <strong className="text-gold">Factory GAF Verified:</strong> Inquiries are managed by Jay-Co Sheet Metal & Roofing (GAF Contractor #1132527). No aggressive sales calls or third-party lead brokers.
+            <div className="bg-mocha-950 border border-amber/30 p-3.5 rounded-lg text-xs sm:text-sm text-stone-300 flex items-start gap-2.5">
+              <ShieldCheck className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+              <span className="leading-relaxed">
+                <strong className="text-gold">Factory GAF Verified:</strong> Inquiries are managed directly by Jay-Co Sheet Metal & Roofing (GAF Contractor #1132527). No third-party lead brokers or automated marketing spam.
               </span>
             </div>
           </div>
@@ -636,7 +636,7 @@ export const MultiStepQuoteForm: React.FC<{ isModal?: boolean; onClose?: () => v
               ) : (
                 <>
                   <Send className="w-4 h-4" />
-                  <span>Transmitting Consultation Scope</span>
+                  <span>Submit Consultation Request</span>
                 </>
               )}
             </button>

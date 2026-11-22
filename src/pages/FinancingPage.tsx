@@ -21,7 +21,7 @@ export const FinancingPage: React.FC = () => {
             Roofing Investment & Monthly Payment Calculator
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Explore preliminary monthly payment estimates across various term lengths, down payments, and interest rates to plan your estate roofing investment.
           </p>
         </div>

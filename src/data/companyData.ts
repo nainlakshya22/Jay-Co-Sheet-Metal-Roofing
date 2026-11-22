@@ -429,7 +429,7 @@ export const SERVICES: ServiceItem[] = [
     category: "Architectural Metal Fabrication",
     shortDescription: "Custom shop-brake chimney shrouds, soldered step flashing, parapet wall coping, and cricket water diverters that permanently resolve chronic leak areas.",
     fullDescription: "Over 85% of residential roof leaks do not occur in the open shingle field—they occur at transitions: chimney shoulders, headwalls, parapet caps, dormer sidewalls, and valley intersections where different building planes meet. Most roofers smear temporary caulk over failed flashings, which cracks within two hot Texas summers. At Jay-Co, we fabricate permanent metal flashing assemblies in our Knight St shop. We create two-piece step-and-counter flashings ground into brick mortar joints, custom welded or soldered copper chimney crickets that divert water around masonry, and architectural chimney shrouds with built-in spark arrestors.",
-    heroImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80",
     materialsUsed: ["16-oz Cold-Rolled Copper", "24-Gauge Kynar 500 Galvalume", "Lead Counter-Flashing", "Stainless Steel Chimney Spark Mesh"],
     keyBenefits: [
       "Permanent metal-on-metal water diversion eliminating reliance on temporary caulk",
@@ -464,7 +464,7 @@ export const SERVICES: ServiceItem[] = [
     category: "Specialty & Restoration",
     shortDescription: "Thermal leak diagnostics, wind blow-off repairs, storm damage mitigation, and precision flashing restoration performed by seasoned craftsmen.",
     fullDescription: "Not every roof issue requires a complete tear-off and replacement. When an isolated leak develops around a plumbing vent, skylight, or damaged valley, Jay-Co provides expert diagnostic leak detection and permanent surgical repairs. Our technicians have spent decades working with metal, copper, tile, and composition shingles. We trace the true origin of water entry—which is often 10 to 15 feet away from where water drips inside the ceiling—and rebuild the compromised flashing, underlayment, and roof substrate correctly. We also provide storm hardening inspections to prepare Houston properties for hurricane season.",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
     materialsUsed: ["Matching Gauge Sheet Metal", "GAF High-Grade Shingle Bundles", "Lead Pipe Boots", "High-Performance Sealant Alloys"],
     keyBenefits: [
       "Diagnostic leak detection identifying the true hidden origin of water intrusion",
@@ -499,7 +499,7 @@ export const SERVICES: ServiceItem[] = [
     category: "Specialty & Restoration",
     shortDescription: "Multi-ply SBS modified bitumen, cold-applied elastomeric membranes, and specialized balcony deck waterproofing for luxury residential terraces.",
     fullDescription: "Modern architecture frequently incorporates flat roof sections, covered outdoor kitchens, and second-story walk-out balconies over living spaces. These low-slope areas require completely different physics and materials than pitched roofs. Water does not shed quickly; it moves slowly and can pool during heavy storms. Jay-Co installs heavy-duty SBS modified bitumen multi-ply systems and pedestrian traffic waterproofing membranes engineered for extreme durability. Our balcony deck waterproofing creates a seamless, reinforced monolithic barrier under stone pavers or wood decking, protecting the living spaces below.",
-    heroImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+    heroImage: "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1200&q=80",
     materialsUsed: ["SBS Modified Bitumen Membranes", "Cold-Applied Adhesive Formulations", "Reinforced Polyester Scrim", "Custom Shop Edge Cleats"],
     keyBenefits: [
       "Monolithic multi-ply waterproofing impervious to ponding water",

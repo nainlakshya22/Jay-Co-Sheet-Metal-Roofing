@@ -1,0 +1,343 @@
+{
+  "timestamp": "2026-11-22T06:27:38.359Z",
+  "visualQuality": {
+    "hasHorizontalOverflow": false,
+    "scrollWidth": 390,
+    "innerWidth": 390,
+    "bodyFontSize": "16px",
+    "bodyLineHeight": "28px",
+    "h1FontSize": "30px",
+    "h1LineHeight": "34.2px"
+  },
+  "contentAccuracy": {
+    "businessNameFound": true,
+    "legalNameFound": true,
+    "phoneFound": true,
+    "addressFound": true,
+    "gafIdFound": true,
+    "gafCertifiedStatus": true,
+    "noMasterEliteClaim": true,
+    "permitFound": true,
+    "permitAddress": true,
+    "permitValuation": true,
+    "bbbUnratedDisclosed": true,
+    "domainDisambiguationFound": true
+  },
+  "functionalTesting": {
+    "navTest": {
+      "desktopLinks": [
+        "Home",
+        "Services",
+        "Metal Fabrication",
+        "Portfolio",
+        "Materials",
+        "About",
+        "Estimator"
+      ],
+      "count": 7,
+      "hasServices": true,
+      "hasPortfolio": true,
+      "hasAbout": true
+    },
+    "ctaLinksTest": {
+      "phoneLinksCount": 5,
+      "phoneHrefs": [
+        "tel:+17137384525",
+        "tel:+17137384525",
+        "tel:+17137384525",
+        "tel:+17137384525",
+        "tel:+17137384525"
+      ],
+      "emailLinksCount": 1,
+      "emailHrefs": [
+        "mailto:jaycosm@sbcglobal.com"
+      ],
+      "quoteButtonsCount": 16,
+      "allPhonesMatch": true,
+      "allEmailsMatch": true
+    },
+    "estimatorTest": {
+      "initial": "$48,602",
+      "afterSlate": "$84,525",
+      "afterReset": "$48,602",
+      "calculating": true
+    },
+    "financingTest": {
+      "initial": "$639",
+      "term12": "$2,740",
+      "term84": "$491",
+      "dynamicCalculation": true
+    },
+    "portfolioTest": {
+      "initialCount": 5,
+      "copperCount": 1,
+      "restoredCount": 5,
+      "filteringWorks": true
+    },
+    "sliderTest": {
+      "count": 2,
+      "initialVal": "50",
+      "afterLeftVal": "40",
+      "interactive": true
+    },
+    "aiResponse": {
+      "hasKnightSt": true,
+      "hasPhone": true
+    },
+    "stickyTest": {
+      "rendered": true,
+      "visible": true,
+      "hasCall": true,
+      "hasQuote": true,
+      "callHref": "tel:+17137384525"
+    },
+    "footerTest": {
+      "totalLinks": 34,
+      "hasPrivacy": true,
+      "hasTerms": true,
+      "hasContact": true,
+      "hasFaqs": true
+    },
+    "quoteSubmissionResult": {
+      "submitted": true,
+      "refId": "JC-476040"
+    },
+    "leadPersisted": true
+  },
+  "productionReadiness": {
+    "routes": [
+      {
+        "path": "/",
+        "name": "Homepage",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Architectural Metal Roofing\n& Custom She"
+      },
+      {
+        "path": "/#/services",
+        "name": "Services Directory",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Specialized Roofing & Sheet Metal Fabric"
+      },
+      {
+        "path": "/#/architectural-metal",
+        "name": "Architectural Metal Fabrication",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Custom Architectural Sheet Metal & Coppe"
+      },
+      {
+        "path": "/#/materials",
+        "name": "Materials Specification",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Materials, Alloys & Gulf Coast Engineeri"
+      },
+      {
+        "path": "/#/projects",
+        "name": "Project Portfolio",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Our Architectural Projects & Documented "
+      },
+      {
+        "path": "/#/project-bunker-hill",
+        "name": "Bunker Hill Case Study",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Bunker Hill Village Estate Re-Roof & Arc"
+      },
+      {
+        "path": "/#/about",
+        "name": "About Jay-Co",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Old-World Sheet Metal Artistry. Gulf Coa"
+      },
+      {
+        "path": "/#/heritage",
+        "name": "Company Heritage",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "The Heritage of Jay-Co: Houston Roots Si"
+      },
+      {
+        "path": "/#/reviews",
+        "name": "Client Reviews",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Client Reviews & GAF Network Feedback"
+      },
+      {
+        "path": "/#/certifications",
+        "name": "Certifications & Warranties",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Certifications, Factory Authorizations &"
+      },
+      {
+        "path": "/#/gaf-certification",
+        "name": "GAF Certification Details",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "GAF Certified™ Residential Contractor #1"
+      },
+      {
+        "path": "/#/service-areas",
+        "name": "Houston Service Areas",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Houston Service Areas & Municipal Permit"
+      },
+      {
+        "path": "/#/estimator",
+        "name": "Interactive Roof Estimator",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Interactive Roof Investment Estimator"
+      },
+      {
+        "path": "/#/financing",
+        "name": "Roofing Financing Calculator",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Roofing Investment & Monthly Payment Cal"
+      },
+      {
+        "path": "/#/before-after",
+        "name": "Before & After Transformations",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Before & After Architectural Transformat"
+      },
+      {
+        "path": "/#/quote",
+        "name": "Quote Consultation Request",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Request an Architectural Roofing Consult"
+      },
+      {
+        "path": "/#/contact",
+        "name": "Contact & Shop Desk",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Contact Jay-Co Sheet Metal & Roofing"
+      },
+      {
+        "path": "/#/faqs",
+        "name": "FAQs & Knowledge Base",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Frequently Asked Questions & Technical S"
+      },
+      {
+        "path": "/#/privacy",
+        "name": "Privacy Policy",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Privacy Policy"
+      },
+      {
+        "path": "/#/terms",
+        "name": "Terms of Service",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Terms of Service"
+      },
+      {
+        "path": "/#/service-standing-seam",
+        "name": "Service: Standing Seam",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Standing Seam Metal Roofing"
+      },
+      {
+        "path": "/#/service-copper-roofing",
+        "name": "Service: Copper Roofing",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Architectural Copper Roofing & Fabricati"
+      },
+      {
+        "path": "/#/service-sheet-metal",
+        "name": "Service: Sheet Metal",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Custom Sheet Metal Fabrication"
+      },
+      {
+        "path": "/#/service-slate-tile",
+        "name": "Service: Slate & Tile",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Natural Slate & Architectural Tile Roofi"
+      },
+      {
+        "path": "/#/service-composition-shingle",
+        "name": "Service: GAF Shingles",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Premium Composition Shingles & GAF Syste"
+      },
+      {
+        "path": "/#/service-roof-replacement",
+        "name": "Service: Roof Replacement",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Roof Replacement & Residential Re-Roofin"
+      },
+      {
+        "path": "/#/service-gutters-downspouts",
+        "name": "Service: Gutters & Scuppers",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Architectural Gutters, Downspouts & Scup"
+      },
+      {
+        "path": "/#/service-custom-flashing",
+        "name": "Service: Custom Flashing",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Chimney Caps, Coping & Custom Flashing"
+      },
+      {
+        "path": "/#/service-roof-repairs",
+        "name": "Service: Roof Repairs",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Roof Repairs & Diagnostic Maintenance"
+      },
+      {
+        "path": "/#/service-waterproofing",
+        "name": "Service: Balcony Waterproofing",
+        "pass": true,
+        "brokenImagesCount": 0,
+        "h1": "Low-Slope Roofing & Balcony Waterproofin"
+      }
+    ],
+    "allRoutesValid": true,
+    "serverPersistence": {
+      "leadsCount": 31,
+      "fileVerified": true
+    }
+  },
+  "emailAndReviews": {
+    "emailDispatch": {
+      "smtpConfigured": false,
+      "resendConfigured": false,
+      "status": "LOCALLY SIMULATED / STORE-ONLY (Leads saved to leads.json with unique IDs; outbound SMTP credentials not set in environment)",
+      "leadStorageWorking": true
+    },
+    "googleReviews": {
+      "liveApiConfigured": false,
+      "status": "STATIC AUTHENTIC CURATED SNAPSHOT (Authentic 4.5★ ratings recorded from Jay-Co Google & GAF directory profile; live Places API not wired)",
+      "disclosurePresent": true
+    }
+  },
+  "remainingIssues": [],
+  "failedTests": [],
+  "consoleErrors": [],
+  "networkErrors": []
+}

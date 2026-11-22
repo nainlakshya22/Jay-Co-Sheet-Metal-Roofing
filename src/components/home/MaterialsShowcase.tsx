@@ -104,55 +104,55 @@ export const MaterialsShowcase: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-mocha-800 pb-6 mb-10">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 border-b border-mocha-800 pb-8 mb-12">
+          <div className="space-y-2 max-w-2xl">
+            <div className="flex items-center gap-2">
               <span className="p-1.5 bg-mocha-900 text-gold rounded border border-gold/30">
                 <Layers className="w-4 h-4 text-amber" />
               </span>
-              <span className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
+              <span className="text-xs font-mono uppercase tracking-wider text-gold font-semibold">
                 Architectural Metallurgy
               </span>
             </div>
-            <h2 className="font-serif text-2xl sm:text-4xl text-ivory font-bold">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-ivory font-bold leading-tight">
               Premium Roofing & Metal Materials Showcase
             </h2>
-            <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-2xl">
-              Inspect the engineering specifications, chemical compositions, and Gulf Coast wind ratings of our core architectural materials.
+            <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans pt-1">
+              Inspect the engineering specifications, chemical compositions, and Gulf Coast storm ratings of our core architectural materials.
             </p>
           </div>
 
           <button
             onClick={() => navigateTo('materials')}
-            className="text-gold-light hover:text-gold text-xs uppercase tracking-wider font-semibold transition-colors border border-gold/30 px-3.5 py-2 rounded bg-mocha-900"
+            className="text-gold-light hover:text-gold text-xs uppercase tracking-wider font-semibold transition-colors border border-gold/40 hover:border-gold px-4 py-2.5 rounded bg-mocha-900 flex-shrink-0 gold-border-glow shadow-sm"
           >
             Explore Full Metallurgy Guide →
           </button>
         </div>
 
         {/* Material Selection Tabs */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 mb-10">
           {MATERIAL_TABS.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTabId(tab.id)}
-              className={`p-4 rounded text-left border transition-all duration-300 ${
+              className={`p-4 sm:p-5 rounded text-left border transition-all duration-300 ${
                 activeTabId === tab.id
                   ? 'bg-mocha-850 border-gold shadow-gold text-ivory'
                   : 'bg-mocha-900 border-mocha-800 hover:border-gold/40 text-stone-300'
               }`}
             >
-              <span className="text-[10px] font-mono text-gold uppercase block mb-1">
+              <span className="text-[11px] font-mono text-gold uppercase block mb-1">
                 {tab.category}
               </span>
-              <h4 className="font-serif font-bold text-sm text-ivory truncate">{tab.name}</h4>
-              <span className="text-xs text-stone-400 block font-mono mt-0.5">{tab.gauge}</span>
+              <h4 className="font-serif font-bold text-sm sm:text-base text-ivory truncate">{tab.name}</h4>
+              <span className="text-xs text-stone-400 block font-mono mt-1">{tab.gauge}</span>
             </button>
           ))}
         </div>
 
         {/* Selected Material Deep Dive Card */}
-        <div className="bg-mocha-900 border border-gold/30 rounded p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-luxury">
+        <div className="bg-mocha-900 border border-gold/30 rounded p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center shadow-luxury">
           {/* Material Image */}
           <div className="lg:col-span-5 relative rounded overflow-hidden border border-mocha-800 h-80 sm:h-96 group">
             <img
@@ -161,54 +161,54 @@ export const MaterialsShowcase: React.FC = () => {
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-mocha-950 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 bg-mocha-950/90 backdrop-blur-md p-3 rounded border border-gold/30">
-              <span className="text-xs font-serif font-bold text-ivory block">{activeMaterial.name}</span>
-              <span className="text-[11px] text-gold font-mono">{activeMaterial.gauge}</span>
+            <div className="absolute bottom-4 left-4 right-4 bg-mocha-950/95 backdrop-blur-md p-3.5 rounded border border-gold/30">
+              <span className="text-sm font-serif font-bold text-ivory block">{activeMaterial.name}</span>
+              <span className="text-xs text-gold font-mono">{activeMaterial.gauge}</span>
             </div>
           </div>
 
           {/* Material Specifications & Performance */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-gold font-semibold">
+              <span className="text-xs font-mono uppercase tracking-wider text-gold font-semibold">
                 {activeMaterial.category}
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl text-ivory font-bold mt-1">
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-ivory font-bold mt-1.5 leading-snug">
                 {activeMaterial.name}
               </h3>
-              <p className="text-xs sm:text-sm text-stone-300 mt-2 leading-relaxed">
+              <p className="text-base text-stone-200 mt-3 leading-[1.75] font-sans">
                 {activeMaterial.description}
               </p>
             </div>
 
             {/* Quick Metrics */}
-            <div className="grid grid-cols-3 gap-3 text-xs bg-mocha-950 p-3.5 rounded border border-mocha-800 font-mono">
+            <div className="grid grid-cols-3 gap-3 text-xs bg-mocha-950 p-4 rounded border border-mocha-800 font-mono">
               <div>
-                <span className="text-stone-400 block text-[10px]">LIFESPAN</span>
-                <span className="text-gold font-bold">{activeMaterial.lifespan}</span>
+                <span className="text-stone-400 block text-[11px]">LIFESPAN</span>
+                <span className="text-gold font-bold text-sm sm:text-base">{activeMaterial.lifespan}</span>
               </div>
               <div>
-                <span className="text-stone-400 block text-[10px]">WIND RATING</span>
-                <span className="text-ivory font-bold">{activeMaterial.windRating}</span>
+                <span className="text-stone-400 block text-[11px]">WIND RATING</span>
+                <span className="text-ivory font-bold text-sm sm:text-base">{activeMaterial.windRating}</span>
               </div>
               <div>
-                <span className="text-stone-400 block text-[10px]">FIRE RATING</span>
-                <span className="text-emerald-400 font-bold">{activeMaterial.fireRating}</span>
+                <span className="text-stone-400 block text-[11px]">FIRE RATING</span>
+                <span className="text-emerald-400 font-bold text-sm sm:text-base">{activeMaterial.fireRating}</span>
               </div>
             </div>
 
             {/* Houston Climate Advantage */}
-            <div className="p-3.5 bg-mocha-950/80 border-l-2 border-amber rounded-r text-xs text-stone-300 space-y-1">
-              <strong className="text-gold block font-mono text-[11px] uppercase tracking-wider">
+            <div className="p-4 bg-mocha-950/80 border-l-2 border-amber rounded-r text-sm text-stone-200 space-y-1.5 leading-relaxed">
+              <strong className="text-gold block font-mono text-xs uppercase tracking-wider">
                 Houston Climate Engineering Consideration:
               </strong>
               <p>{activeMaterial.houstonAdvantage}</p>
             </div>
 
             {/* Technical Specs 2x2 */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
               {activeMaterial.specs.map(s => (
-                <div key={s.label} className="p-2.5 bg-mocha-950 rounded border border-mocha-800 flex justify-between">
+                <div key={s.label} className="p-3 bg-mocha-950 rounded border border-mocha-800 flex justify-between items-center">
                   <span className="text-stone-400">{s.label}:</span>
                   <span className="text-gold-light font-mono font-medium">{s.value}</span>
                 </div>
@@ -219,7 +219,7 @@ export const MaterialsShowcase: React.FC = () => {
             <div className="pt-2">
               <button
                 onClick={() => openQuoteModal({ material: activeMaterial.name })}
-                className="amber-button-glow font-bold px-6 py-3 rounded-sm text-xs uppercase tracking-wider inline-flex items-center gap-2 relative-shimmer group"
+                className="amber-button-glow font-bold px-7 py-3.5 rounded-sm text-xs uppercase tracking-wider inline-flex items-center gap-2 relative-shimmer group shadow-amber"
               >
                 <span>Request Sample & Specification Quote</span>
                 <ArrowRight className="w-4 h-4 text-mocha-950 transition-transform group-hover:translate-x-1" />

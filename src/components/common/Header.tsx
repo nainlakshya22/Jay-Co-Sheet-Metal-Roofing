@@ -97,7 +97,7 @@ export const Header: React.FC = () => {
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden xl:flex items-center gap-7 text-sm font-medium">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium">
           <button 
             onClick={() => handleNav('home')}
             className={`transition-colors py-2 flex items-center gap-1.5 ${currentRoute === 'home' ? 'text-gold font-semibold' : 'text-stone-300 hover:text-gold'}`}
@@ -112,6 +112,7 @@ export const Header: React.FC = () => {
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
               className={`flex items-center gap-1.5 py-2 transition-colors ${currentRoute.startsWith('service') ? 'text-gold font-semibold' : 'text-stone-300 hover:text-gold'}`}
+              aria-expanded={servicesDropdownOpen}
             >
               {currentRoute.startsWith('service') && <span className="w-1.5 h-1.5 rounded-full bg-amber" />}
               <span>Services</span>
@@ -120,55 +121,44 @@ export const Header: React.FC = () => {
 
             {servicesDropdownOpen && (
               <div 
-                className="absolute top-full left-0 w-80 bg-mocha-900 border border-gold/30 rounded-sm shadow-luxury p-3 z-50 animate-fadeIn"
+                className="absolute top-full left-0 w-72 bg-mocha-900 border border-gold/30 rounded-sm shadow-luxury p-3 z-50 animate-fadeIn"
                 onMouseEnter={() => setServicesDropdownOpen(true)}
               >
                 <div className="text-[11px] font-mono text-gold uppercase tracking-wider px-3 py-1.5 border-b border-mocha-800">
-                  Architectural Divisions
+                  Primary Divisions
                 </div>
                 <div className="py-1">
                   <button onClick={() => handleNav('service-standing-seam')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors flex items-center justify-between">
-                    <span>Standing Seam Metal Roofing</span>
+                    <span>Standing Seam Metal</span>
                     <span className="text-[10px] text-amber font-mono">24-Ga</span>
                   </button>
                   <button onClick={() => handleNav('service-copper-roofing')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors flex items-center justify-between">
-                    <span>Architectural Copper Fabrication</span>
+                    <span>Architectural Copper</span>
                     <span className="text-[10px] text-amber font-mono">16/20oz</span>
                   </button>
                   <button onClick={() => handleNav('service-sheet-metal')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors flex items-center justify-between">
-                    <span>Custom Shop Fabrication</span>
+                    <span>Shop Metal Fabrication</span>
                     <span className="text-[10px] text-gold font-mono">Knight St</span>
                   </button>
                   <button onClick={() => handleNav('service-slate-tile')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors flex items-center justify-between">
-                    <span>Slate & Clay Tile Roofing</span>
+                    <span>Slate & Clay Tile</span>
                     <span className="text-[10px] text-stone-400 font-mono">S-1 Stone</span>
                   </button>
                   <button onClick={() => handleNav('service-composition-shingle')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors flex items-center justify-between">
-                    <span>Composition Shingles & GAF</span>
-                    <span className="text-[10px] text-gold font-mono">ID:1132527</span>
+                    <span>Composition & GAF</span>
+                    <span className="text-[10px] text-gold font-mono">#1132527</span>
                   </button>
                   <button onClick={() => handleNav('service-roof-replacement')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors">
-                    <span>Roof Replacement & Re-Roofing</span>
-                  </button>
-                  <button onClick={() => handleNav('service-gutters-downspouts')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors">
-                    <span>Architectural Gutters & Scuppers</span>
-                  </button>
-                  <button onClick={() => handleNav('service-custom-flashing')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors">
-                    <span>Chimney Caps & Custom Flashing</span>
-                  </button>
-                  <button onClick={() => handleNav('service-roof-repairs')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors">
-                    <span>Roof Repairs & Diagnostics</span>
-                  </button>
-                  <button onClick={() => handleNav('service-waterproofing')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors">
-                    <span>Low-Slope & Balcony Waterproofing</span>
+                    <span>Residential Re-Roofing</span>
                   </button>
                 </div>
                 <div className="pt-2 border-t border-mocha-800">
                   <button 
                     onClick={() => handleNav('services')} 
-                    className="w-full text-center py-1.5 text-xs text-gold font-medium hover:underline"
+                    className="w-full text-center py-1.5 text-xs text-gold font-medium hover:underline flex items-center justify-center gap-1"
                   >
-                    View All Services Directory →
+                    <span>View All Services Directory</span>
+                    <span>→</span>
                   </button>
                 </div>
               </div>
@@ -184,19 +174,19 @@ export const Header: React.FC = () => {
           </button>
 
           <button 
-            onClick={() => handleNav('materials')}
-            className={`transition-colors py-2 flex items-center gap-1.5 ${currentRoute === 'materials' ? 'text-gold font-semibold' : 'text-stone-300 hover:text-gold'}`}
-          >
-            {currentRoute === 'materials' && <span className="w-1.5 h-1.5 rounded-full bg-amber" />}
-            <span>Materials</span>
-          </button>
-
-          <button 
             onClick={() => handleNav('projects')}
             className={`transition-colors py-2 flex items-center gap-1.5 ${currentRoute === 'projects' || currentRoute === 'project-bunker-hill' ? 'text-gold font-semibold' : 'text-stone-300 hover:text-gold'}`}
           >
             {(currentRoute === 'projects' || currentRoute === 'project-bunker-hill') && <span className="w-1.5 h-1.5 rounded-full bg-amber" />}
             <span>Portfolio</span>
+          </button>
+
+          <button 
+            onClick={() => handleNav('materials')}
+            className={`transition-colors py-2 flex items-center gap-1.5 ${currentRoute === 'materials' ? 'text-gold font-semibold' : 'text-stone-300 hover:text-gold'}`}
+          >
+            {currentRoute === 'materials' && <span className="w-1.5 h-1.5 rounded-full bg-amber" />}
+            <span>Materials</span>
           </button>
 
           {/* Company Dropdown */}
@@ -205,32 +195,30 @@ export const Header: React.FC = () => {
               onMouseEnter={() => setCompanyDropdownOpen(true)}
               onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
               className={`flex items-center gap-1.5 py-2 transition-colors ${['about', 'heritage', 'certifications', 'gaf-certification', 'service-areas', 'reviews', 'faqs'].includes(currentRoute) ? 'text-gold font-semibold' : 'text-stone-300 hover:text-gold'}`}
+              aria-expanded={companyDropdownOpen}
             >
               {['about', 'heritage', 'certifications', 'gaf-certification', 'service-areas', 'reviews', 'faqs'].includes(currentRoute) && <span className="w-1.5 h-1.5 rounded-full bg-amber" />}
-              <span>Company & Trust</span>
+              <span>About</span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform ${companyDropdownOpen ? 'rotate-180 text-gold' : ''}`} />
             </button>
 
             {companyDropdownOpen && (
               <div 
-                className="absolute top-full left-0 w-64 bg-mocha-900 border border-gold/30 rounded-sm shadow-luxury p-2 z-50 animate-fadeIn"
+                className="absolute top-full left-0 w-60 bg-mocha-900 border border-gold/30 rounded-sm shadow-luxury p-2 z-50 animate-fadeIn"
                 onMouseEnter={() => setCompanyDropdownOpen(true)}
               >
                 <button onClick={() => handleNav('about')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors">
                   About Jay-Co
                 </button>
                 <button onClick={() => handleNav('heritage')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors">
-                  Company Heritage & History
+                  Heritage (Est. 1988)
                 </button>
                 <button onClick={() => handleNav('gaf-certification')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors flex items-center justify-between">
                   <span>GAF Certification</span>
                   <span className="text-[10px] text-amber font-mono">#1132527</span>
                 </button>
-                <button onClick={() => handleNav('certifications')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors">
-                  Certifications & Standards
-                </button>
                 <button onClick={() => handleNav('reviews')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors flex items-center justify-between">
-                  <span>Google & Client Reviews</span>
+                  <span>Client Reviews</span>
                   <span className="text-[10px] text-gold font-bold">4.5 ★</span>
                 </button>
                 <button onClick={() => handleNav('service-areas')} className="w-full text-left px-3 py-2 rounded hover:bg-mocha-800 text-stone-200 hover:text-gold text-xs transition-colors">
@@ -248,7 +236,7 @@ export const Header: React.FC = () => {
             className={`flex items-center gap-1.5 transition-colors py-2 ${currentRoute === 'estimator' ? 'text-gold font-semibold' : 'text-stone-300 hover:text-gold'}`}
           >
             <Calculator className="w-3.5 h-3.5 text-amber" />
-            <span>Roof Estimator</span>
+            <span>Estimator</span>
           </button>
         </nav>
 
@@ -256,27 +244,27 @@ export const Header: React.FC = () => {
         <div className="hidden lg:flex items-center gap-3">
           <button 
             onClick={() => handleNav('contact')} 
-            className="text-stone-300 hover:text-gold text-xs uppercase tracking-wider font-medium px-3 py-2.5 transition-colors"
+            className="text-stone-300 hover:text-gold text-xs uppercase tracking-wider font-medium px-2.5 py-2 transition-colors"
           >
             Contact
           </button>
           <button 
             onClick={() => openQuoteModal()} 
-            className="amber-button-glow font-bold text-xs tracking-wider uppercase px-5 py-2.5 rounded-sm relative-shimmer flex items-center gap-2 group"
+            className="amber-button-glow font-bold text-xs tracking-wider uppercase px-4 py-2.5 rounded-sm relative-shimmer flex items-center gap-2 group shadow-sm"
           >
             <FileText className="w-3.5 h-3.5" />
-            <span>Request a Quote</span>
+            <span>Request an Estimate</span>
           </button>
         </div>
 
         {/* Mobile Menu Hamburger Button */}
-        <div className="flex xl:hidden items-center gap-2">
+        <div className="flex lg:hidden items-center gap-2">
           <button 
             onClick={() => openQuoteModal()}
-            className="amber-button-glow px-3.5 py-2 min-h-[44px] rounded-sm text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center sm:hidden"
+            className="amber-button-glow px-3 py-2 min-h-[44px] rounded-sm text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center sm:hidden"
             aria-label="Request roofing quote"
           >
-            Quote
+            Estimate
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -293,139 +281,112 @@ export const Header: React.FC = () => {
       {mobileMenuOpen && (
         <>
           <div 
-            className="fixed inset-0 top-[116px] z-30 bg-black/80 backdrop-blur-sm xl:hidden animate-fadeIn" 
+            className="fixed inset-0 top-[112px] z-30 bg-black/80 backdrop-blur-sm lg:hidden animate-fadeIn" 
             onClick={() => setMobileMenuOpen(false)} 
             aria-hidden="true" 
           />
-          <div className="relative z-40 xl:hidden bg-mocha-950 border-b border-mocha-800 px-4 sm:px-6 py-6 max-h-[80vh] overflow-y-auto animate-fadeIn shadow-2xl">
-            <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-2 pb-4 border-b border-mocha-800">
-                <button 
-                  onClick={() => handleNav('home')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-stone-200 text-sm font-medium hover:text-gold hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  Home
-                </button>
-                <button 
-                  onClick={() => handleNav('about')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-stone-200 text-sm font-medium hover:text-gold hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  About Jay-Co
-                </button>
-                <button 
-                  onClick={() => handleNav('heritage')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-stone-200 text-sm font-medium hover:text-gold hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  Heritage (1988)
-                </button>
-                <button 
-                  onClick={() => handleNav('architectural-metal')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-stone-200 text-sm font-medium hover:text-gold hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  Metal Fabrication
-                </button>
-                <button 
-                  onClick={() => handleNav('materials')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-stone-200 text-sm font-medium hover:text-gold hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  Materials
-                </button>
-                <button 
-                  onClick={() => handleNav('projects')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-stone-200 text-sm font-medium hover:text-gold hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  Portfolio
-                </button>
-                <button 
-                  onClick={() => handleNav('before-after')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-stone-200 text-sm font-medium hover:text-gold hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  Before & After
-                </button>
-                <button 
-                  onClick={() => handleNav('reviews')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-stone-200 text-sm font-medium hover:text-gold hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  Reviews (4.5★)
-                </button>
-                <button 
-                  onClick={() => handleNav('gaf-certification')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-gold text-sm font-medium hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  GAF Certified (#1132527)
-                </button>
-                <button 
-                  onClick={() => handleNav('service-areas')} 
-                  className="text-left py-3 px-3.5 min-h-[44px] flex items-center rounded bg-mocha-900 text-stone-200 text-sm font-medium hover:text-gold hover:bg-mocha-850 active:bg-mocha-800 transition-colors"
-                >
-                  Houston Areas
-                </button>
-              </div>
-
-              {/* Services List for Mobile */}
-              <div>
-                <div className="text-xs font-mono text-gold uppercase tracking-wider mb-2">
-                  Services Directory
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-stone-300">
-                  <button onClick={() => handleNav('service-standing-seam')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Standing Seam Metal
+          <div className="relative z-40 lg:hidden bg-mocha-950 border-b border-mocha-800 px-4 sm:px-6 py-6 max-h-[82vh] overflow-y-auto animate-fadeIn shadow-2xl">
+            <div className="space-y-5">
+              {/* Primary Mobile Navigation */}
+              <div className="space-y-1">
+                <span className="text-[11px] font-mono text-gold uppercase tracking-wider block px-2 mb-2">
+                  Navigation
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                  <button 
+                    onClick={() => handleNav('home')} 
+                    className={`text-left py-3 px-3.5 min-h-[44px] flex items-center justify-between rounded text-sm font-medium transition-colors ${currentRoute === 'home' ? 'bg-mocha-850 text-gold font-semibold' : 'bg-mocha-900 text-stone-200 hover:text-gold hover:bg-mocha-850'}`}
+                  >
+                    <span>Home</span>
+                    {currentRoute === 'home' && <span className="w-1.5 h-1.5 rounded-full bg-amber" />}
                   </button>
-                  <button onClick={() => handleNav('service-copper-roofing')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Architectural Copper
+                  <button 
+                    onClick={() => handleNav('services')} 
+                    className={`text-left py-3 px-3.5 min-h-[44px] flex items-center justify-between rounded text-sm font-medium transition-colors ${currentRoute.startsWith('service') ? 'bg-mocha-850 text-gold font-semibold' : 'bg-mocha-900 text-stone-200 hover:text-gold hover:bg-mocha-850'}`}
+                  >
+                    <span>Services Directory</span>
+                    <span className="text-xs text-stone-400 font-mono">10 Divisions</span>
                   </button>
-                  <button onClick={() => handleNav('service-sheet-metal')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Shop Sheet Metal
+                  <button 
+                    onClick={() => handleNav('architectural-metal')} 
+                    className={`text-left py-3 px-3.5 min-h-[44px] flex items-center justify-between rounded text-sm font-medium transition-colors ${currentRoute === 'architectural-metal' ? 'bg-mocha-850 text-gold font-semibold' : 'bg-mocha-900 text-stone-200 hover:text-gold hover:bg-mocha-850'}`}
+                  >
+                    <span>Shop Metal Fabrication</span>
+                    <span className="text-xs text-gold font-mono">Knight St</span>
                   </button>
-                  <button onClick={() => handleNav('service-slate-tile')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Natural Slate & Tile
+                  <button 
+                    onClick={() => handleNav('projects')} 
+                    className={`text-left py-3 px-3.5 min-h-[44px] flex items-center justify-between rounded text-sm font-medium transition-colors ${currentRoute === 'projects' || currentRoute === 'project-bunker-hill' ? 'bg-mocha-850 text-gold font-semibold' : 'bg-mocha-900 text-stone-200 hover:text-gold hover:bg-mocha-850'}`}
+                  >
+                    <span>Project Portfolio</span>
+                    <span className="text-xs text-stone-400 font-mono">Case Studies</span>
                   </button>
-                  <button onClick={() => handleNav('service-composition-shingle')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Composition & GAF
+                  <button 
+                    onClick={() => handleNav('materials')} 
+                    className={`text-left py-3 px-3.5 min-h-[44px] flex items-center justify-between rounded text-sm font-medium transition-colors ${currentRoute === 'materials' ? 'bg-mocha-850 text-gold font-semibold' : 'bg-mocha-900 text-stone-200 hover:text-gold hover:bg-mocha-850'}`}
+                  >
+                    <span>Materials & Metallurgy</span>
+                    <span className="text-xs text-stone-400 font-mono">Specs</span>
                   </button>
-                  <button onClick={() => handleNav('service-roof-replacement')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Re-Roofing Replacement
+                  <button 
+                    onClick={() => handleNav('about')} 
+                    className={`text-left py-3 px-3.5 min-h-[44px] flex items-center justify-between rounded text-sm font-medium transition-colors ${currentRoute === 'about' ? 'bg-mocha-850 text-gold font-semibold' : 'bg-mocha-900 text-stone-200 hover:text-gold hover:bg-mocha-850'}`}
+                  >
+                    <span>About Jay-Co</span>
+                    <span className="text-xs text-stone-400 font-mono">Est. 1988</span>
                   </button>
-                  <button onClick={() => handleNav('service-gutters-downspouts')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Gutters & Scuppers
+                  <button 
+                    onClick={() => handleNav('reviews')} 
+                    className={`text-left py-3 px-3.5 min-h-[44px] flex items-center justify-between rounded text-sm font-medium transition-colors ${currentRoute === 'reviews' ? 'bg-mocha-850 text-gold font-semibold' : 'bg-mocha-900 text-stone-200 hover:text-gold hover:bg-mocha-850'}`}
+                  >
+                    <span>Client Reviews</span>
+                    <span className="text-xs text-gold font-bold">4.5 ★</span>
                   </button>
-                  <button onClick={() => handleNav('service-custom-flashing')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Chimney Caps & Flashing
-                  </button>
-                  <button onClick={() => handleNav('service-roof-repairs')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Repairs & Leak Diagnostics
-                  </button>
-                  <button onClick={() => handleNav('service-waterproofing')} className="text-left p-2.5 min-h-[40px] flex items-center rounded hover:bg-mocha-900 text-stone-200 hover:text-gold">
-                    • Balcony Waterproofing
+                  <button 
+                    onClick={() => handleNav('service-areas')} 
+                    className={`text-left py-3 px-3.5 min-h-[44px] flex items-center justify-between rounded text-sm font-medium transition-colors ${currentRoute === 'service-areas' ? 'bg-mocha-850 text-gold font-semibold' : 'bg-mocha-900 text-stone-200 hover:text-gold hover:bg-mocha-850'}`}
+                  >
+                    <span>Houston Service Areas</span>
+                    <span className="text-xs text-stone-400 font-mono">Villages</span>
                   </button>
                 </div>
               </div>
 
-              {/* Conversion Tools */}
-              <div className="pt-2 border-t border-mocha-800 space-y-2.5">
-                <button 
-                  onClick={() => handleNav('estimator')}
-                  className="w-full min-h-[44px] py-3 px-4 bg-mocha-900 border border-mocha-700 text-stone-200 text-xs uppercase tracking-wider rounded font-medium flex items-center justify-center gap-2 hover:border-gold/50"
-                >
-                  <Calculator className="w-4 h-4 text-amber" />
-                  <span>Interactive Roof Estimator</span>
-                </button>
-                <button 
-                  onClick={() => handleNav('financing')}
-                  className="w-full min-h-[44px] py-3 px-4 bg-mocha-900 border border-mocha-700 text-stone-200 text-xs uppercase tracking-wider rounded font-medium flex items-center justify-center gap-2 hover:border-gold/50"
-                >
-                  <span>Financing Calculator</span>
-                </button>
+              {/* Planning & Calculators */}
+              <div className="pt-3 border-t border-mocha-800">
+                <span className="text-[11px] font-mono text-gold uppercase tracking-wider block px-2 mb-2">
+                  Budgeting Tools
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <button 
+                    onClick={() => handleNav('estimator')}
+                    className="w-full min-h-[44px] py-2.5 px-3.5 bg-mocha-900 hover:bg-mocha-850 border border-mocha-700 hover:border-gold/40 text-stone-200 text-xs uppercase tracking-wider rounded font-medium flex items-center gap-2 transition-colors"
+                  >
+                    <Calculator className="w-4 h-4 text-amber" />
+                    <span>Roof Investment Estimator</span>
+                  </button>
+                  <button 
+                    onClick={() => handleNav('financing')}
+                    className="w-full min-h-[44px] py-2.5 px-3.5 bg-mocha-900 hover:bg-mocha-850 border border-mocha-700 hover:border-gold/40 text-stone-200 text-xs uppercase tracking-wider rounded font-medium flex items-center gap-2 transition-colors"
+                  >
+                    <span className="w-4 h-4 flex items-center justify-center font-bold text-amber">$</span>
+                    <span>Payment Calculator</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Primary Direct CTAs */}
+              <div className="pt-3 border-t border-mocha-800 space-y-2.5">
                 <button 
                   onClick={() => { setMobileMenuOpen(false); openQuoteModal(); }}
-                  className="w-full min-h-[48px] py-3 px-4 amber-button-glow text-xs uppercase tracking-wider font-bold rounded flex items-center justify-center gap-2 relative-shimmer"
+                  className="w-full min-h-[48px] py-3.5 px-4 amber-button-glow text-xs uppercase tracking-wider font-bold rounded flex items-center justify-center gap-2 relative-shimmer shadow-amber"
                 >
                   <FileText className="w-4 h-4" />
-                  <span>Request a Detailed Quote</span>
+                  <span>Request an Estimate</span>
                 </button>
                 <a 
                   href={`tel:${COMPANY_INFO.phone}`}
-                  className="w-full min-h-[48px] py-3 px-4 bg-mocha-850 hover:bg-mocha-800 text-ivory text-xs uppercase tracking-wider font-bold rounded flex items-center justify-center gap-2 border border-mocha-700 transition-colors"
+                  className="w-full min-h-[48px] py-3.5 px-4 bg-mocha-850 hover:bg-mocha-800 text-ivory text-xs uppercase tracking-wider font-bold rounded flex items-center justify-center gap-2 border border-gold/30 transition-colors"
                 >
                   <Phone className="w-4 h-4 text-amber" />
                   <span>Call {COMPANY_INFO.phoneFormatted}</span>

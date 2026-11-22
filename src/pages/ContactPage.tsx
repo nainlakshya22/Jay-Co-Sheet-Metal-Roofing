@@ -72,7 +72,7 @@ export const ContactPage: React.FC = () => {
             Contact Jay-Co Sheet Metal & Roofing
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Connect directly with our Houston estimating and fabrication team at our 2307 Knight Street facility.
           </p>
         </div>
@@ -82,13 +82,13 @@ export const ContactPage: React.FC = () => {
           {/* Left Column: Contact Cards & Shop Details (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-mocha-900/90 border border-gold/30 rounded-xl p-6 sm:p-8 space-y-6 shadow-xl">
-              <h3 className="font-serif text-2xl font-bold text-gold-100 border-b border-mocha-800/80 pb-3">
+              <h3 className="font-serif text-2xl font-bold text-gold-100 border-b border-mocha-800/80 pb-3 leading-snug">
                 Fabrication Shop & Office
               </h3>
 
-              <div className="space-y-4 text-xs sm:text-sm">
+              <div className="space-y-4 text-sm sm:text-base">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
                   <div>
                     <strong className="text-gold-100 block">Physical Shop Address</strong>
                     <span>{COMPANY_INFO.address}</span>
@@ -97,7 +97,7 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
                   <div>
                     <strong className="text-gold-100 block">Primary Telephone</strong>
                     <a href={`tel:${COMPANY_INFO.phone}`} className="text-gold hover:underline font-mono">
@@ -107,7 +107,7 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                  <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
                   <div>
                     <strong className="text-gold-100 block">Direct Email</strong>
                     <a href={`mailto:${COMPANY_INFO.email}`} className="text-stone-300 hover:text-gold font-mono">
@@ -117,19 +117,19 @@ export const ContactPage: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3 text-stone-400">
-                  <Printer className="w-5 h-5 flex-shrink-0 mt-0.5 text-stone-500" />
+                  <Printer className="w-5 h-5 flex-shrink-0 mt-1 text-stone-500" />
                   <div>
                     <strong className="text-stone-300 block">Facsimile (Fax)</strong>
                     <span className="font-mono">{COMPANY_INFO.fax}</span>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 border-t border-mocha-800/80 pt-3">
-                  <Clock className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                <div className="flex items-start gap-3 border-t border-mocha-800/80 pt-4">
+                  <Clock className="w-5 h-5 text-gold flex-shrink-0 mt-1" />
                   <div>
                     <strong className="text-gold-100 block">Operating Hours</strong>
                     <span>Monday – Friday: 7:00 AM – 5:00 PM CST</span>
-                    <span className="block text-stone-400 text-xs">Saturday & Sunday: By Appointment</span>
+                    <span className="block text-stone-400 text-xs sm:text-sm mt-0.5">Saturday & Sunday: By Appointment</span>
                   </div>
                 </div>
               </div>
@@ -139,7 +139,7 @@ export const ContactPage: React.FC = () => {
                   href={`https://maps.google.com/?q=${encodeURIComponent(COMPANY_INFO.address + ', ' + COMPANY_INFO.city + ', ' + COMPANY_INFO.state + ' ' + COMPANY_INFO.zip)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2.5 bg-mocha-950 hover:bg-mocha-850 border border-gold/40 text-gold rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+                  className="min-h-[44px] w-full py-3 bg-mocha-950 hover:bg-mocha-850 border border-gold/40 text-gold rounded-lg text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
                 >
                   <span>Open in Google Maps</span>
                 </a>
@@ -152,7 +152,7 @@ export const ContactPage: React.FC = () => {
                 <AlertCircle className="w-4 h-4" />
                 <span>Storm & Hurricane Damage Support</span>
               </div>
-              <p className="text-xs text-stone-300 leading-relaxed">
+              <p className="text-sm text-stone-300 leading-relaxed">
                 For active leaks following Gulf Coast tropical storms or severe wind events, please call our primary telephone line at <strong className="text-gold-100">(713) 738-4525</strong> for prioritized technical assessment.
               </p>
             </div>
@@ -165,10 +165,10 @@ export const ContactPage: React.FC = () => {
                 <div className="w-16 h-16 bg-gold/15 border border-gold/50 text-gold rounded-full flex items-center justify-center mx-auto shadow-gold-sm">
                   <CheckCircle className="w-9 h-9 text-amber" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-gold-100">
+                <h3 className="font-serif text-2xl font-bold text-gold-100 leading-snug">
                   Message Transmitted Successfully
                 </h3>
-                <p className="text-xs sm:text-sm text-stone-300 max-w-md mx-auto leading-relaxed">
+                <p className="text-base text-stone-300 max-w-md mx-auto leading-relaxed">
                   Thank you, <strong className="text-gold-100">{formData.name}</strong>. Your inquiry has been logged in our dispatch database. Our estimating team at 2307 Knight St will review your project details and follow up within one business day.
                 </p>
                 {referenceId && (
@@ -188,7 +188,7 @@ export const ContactPage: React.FC = () => {
                         message: ''
                       });
                     }}
-                    className="mt-4 text-xs text-gold hover:underline font-mono"
+                    className="min-h-[44px] mt-4 text-sm text-gold hover:underline font-mono"
                   >
                     ← Send another inquiry
                   </button>
@@ -197,10 +197,10 @@ export const ContactPage: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <h3 className="font-serif text-2xl font-bold text-gold-100 mb-1">
+                  <h3 className="font-serif text-2xl font-bold text-gold-100 mb-1 leading-snug">
                     Send an Inquiry to the Knight St Desk
                   </h3>
-                  <p className="text-xs text-stone-400">
+                  <p className="text-sm text-stone-300 leading-relaxed">
                     Submit your architectural questions, material inquiries, or project requests.
                   </p>
                 </div>
@@ -223,7 +223,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Eleanor Vance"
-                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                   />
                 </div>
 
@@ -239,7 +239,7 @@ export const ContactPage: React.FC = () => {
                       value={formData.phone}
                       onChange={e => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="(713) 555-0144"
-                      className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                      className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                     />
                   </div>
                   <div>
@@ -253,7 +253,7 @@ export const ContactPage: React.FC = () => {
                       value={formData.email}
                       onChange={e => setFormData({ ...formData, email: e.target.value })}
                       placeholder="evance@houstonestates.com"
-                      className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                      className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                     />
                   </div>
                 </div>
@@ -265,7 +265,7 @@ export const ContactPage: React.FC = () => {
                   <select
                     value={formData.subject}
                     onChange={e => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-2.5 px-3 text-sm text-gold-100 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg py-3 px-3.5 text-base text-gold-100 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                   >
                     <option value="Standing Seam / Architectural Copper Inquiry">Standing Seam / Architectural Copper Inquiry</option>
                     <option value="Residential Re-Roof & Permitting">Residential Re-Roof & Permitting</option>
@@ -287,17 +287,17 @@ export const ContactPage: React.FC = () => {
                     value={formData.message}
                     onChange={e => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Provide details about your roof square footage, location, material preference, or questions..."
-                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg p-3 text-sm text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+                    className="w-full bg-mocha-950 border border-mocha-800 rounded-lg p-3.5 text-base text-gold-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-amber hover:bg-amber-light disabled:opacity-50 text-mocha-950 font-bold py-3.5 px-6 rounded-md shadow-amber text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer"
+                  className="min-h-[48px] w-full bg-amber hover:bg-amber-light disabled:opacity-50 text-mocha-950 font-bold py-3.5 px-6 rounded-md shadow-amber text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
-                  <span>{isSubmitting ? 'Transmitting Inquiry...' : 'Transmit Inquiry to Estimating Desk'}</span>
+                  <span>{isSubmitting ? 'Sending Message...' : 'Send Message to Estimating Desk'}</span>
                 </button>
               </form>
             )}

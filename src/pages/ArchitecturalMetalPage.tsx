@@ -38,7 +38,7 @@ export const ArchitecturalMetalPage: React.FC = () => {
             Custom Architectural Sheet Metal & Coppersmithing
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             In our Houston Knight St facility, raw coils of 16-oz and 20-oz cold-rolled copper, 24-gauge Galvalume, and architectural stainless steel are sheared, brake-folded, and hand-soldered into permanent building envelopes.
           </p>
         </div>
@@ -46,24 +46,24 @@ export const ArchitecturalMetalPage: React.FC = () => {
         {/* Shop Machinery & Facility Details */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold">
+            <h2 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold leading-snug">
               Heavy Industrial Bending Brakes & Hydraulic Shearing
             </h2>
-            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+            <p className="text-base text-stone-300 leading-relaxed">
               Precision architectural metalwork begins with true mechanical rigidity. We utilize 10-foot mechanical bending brakes capable of folding heavy 24-gauge and 22-gauge architectural alloys with razor-sharp hemmed drip edges and stiffening ribs.
             </p>
-            <p className="text-xs sm:text-sm text-stone-400 leading-relaxed">
+            <p className="text-base text-stone-400 leading-relaxed">
               By fabricating in-house, we eliminate field-spliced shortcuts, sloppy caulking joints, and thin mass-market flashings. Every flashing profile is custom-formed to the exact rake, valley, and parapet angle of your residence.
             </p>
 
             <div className="grid grid-cols-2 gap-3 pt-2 text-xs font-mono">
-              <div className="p-3 bg-mocha-900 border border-mocha-800 rounded-lg">
-                <span className="text-stone-500 block text-[10px]">BRAKE CAPACITY</span>
-                <span className="text-gold font-bold">Up to 10-Foot Continuous</span>
+              <div className="p-3.5 bg-mocha-900 border border-mocha-800 rounded-lg">
+                <span className="text-stone-400 block text-[11px] mb-0.5">BRAKE CAPACITY</span>
+                <span className="text-gold font-bold text-sm">Up to 10-Foot Continuous</span>
               </div>
-              <div className="p-3 bg-mocha-900 border border-mocha-800 rounded-lg">
-                <span className="text-stone-500 block text-[10px]">ALLOY CAPABILITY</span>
-                <span className="text-gold-100 font-bold">Copper, Galvalume, Steel</span>
+              <div className="p-3.5 bg-mocha-900 border border-mocha-800 rounded-lg">
+                <span className="text-stone-400 block text-[11px] mb-0.5">ALLOY CAPABILITY</span>
+                <span className="text-gold-100 font-bold text-sm">Copper, Galvalume, Steel</span>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ export const ArchitecturalMetalPage: React.FC = () => {
                 alt="Jay-Co Shop Brake Machinery"
                 className="w-full h-[400px] object-cover"
               />
-              <div className="p-4 bg-mocha-900 border-t border-mocha-800 text-xs text-stone-400 flex justify-between">
+              <div className="p-4 bg-mocha-900 border-t border-mocha-800 text-xs sm:text-sm text-stone-400 flex justify-between">
                 <span>Heavy Bending Brake in Action</span>
                 <span className="text-gold font-mono">2307 Knight St Shop</span>
               </div>
@@ -89,7 +89,7 @@ export const ArchitecturalMetalPage: React.FC = () => {
             <span className="text-xs font-mono uppercase tracking-widest text-gold">
               Shop Divisions
             </span>
-            <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold mt-1">
+            <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold mt-1 leading-snug">
               Custom Sheet Metal Capabilities
             </h3>
           </div>
@@ -102,7 +102,7 @@ export const ArchitecturalMetalPage: React.FC = () => {
               },
               {
                 title: 'Continuous Half-Round Gutters',
-                desc: '6\" and 7\" seamless half-round cold-rolled copper and heavy aluminum gutters with cast brass fascia brackets.'
+                desc: '6" and 7" seamless half-round cold-rolled copper and heavy aluminum gutters with cast brass fascia brackets.'
               },
               {
                 title: 'Architectural Collector Heads & Scuppers',
@@ -129,7 +129,7 @@ export const ArchitecturalMetalPage: React.FC = () => {
                   <Hammer className="w-5 h-5 text-amber" />
                 </div>
                 <h4 className="font-serif font-bold text-lg text-gold-100">{item.title}</h4>
-                <p className="text-xs text-stone-400 leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-stone-300 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -137,22 +137,22 @@ export const ArchitecturalMetalPage: React.FC = () => {
 
         {/* Conversion CTA */}
         <div className="bg-mocha-900/90 border border-gold/30 rounded-xl p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-4 shadow-xl">
-          <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold">
+          <h3 className="font-serif text-2xl sm:text-3xl text-gold-100 font-bold leading-snug">
             Need Custom Metal Components Fabricated?
           </h3>
-          <p className="text-xs sm:text-sm text-stone-300">
+          <p className="text-base text-stone-300 leading-relaxed max-w-xl mx-auto">
             Send us your architectural blueprints or consult with our shop estimators for custom brake work, copper caps, or gutter fabrication.
           </p>
-          <div className="flex items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <button
               onClick={() => openQuoteModal({ service: 'Custom Sheet Metal Fabrication' })}
-              className="bg-amber hover:bg-amber-light text-mocha-950 font-bold px-6 py-3 rounded-md shadow-amber text-xs uppercase tracking-wider transition-all"
+              className="min-h-[44px] w-full sm:w-auto bg-amber hover:bg-amber-light text-mocha-950 font-bold px-6 py-3 rounded-md shadow-amber text-xs uppercase tracking-wider transition-all"
             >
               Request Fabrication Quote
             </button>
             <a
               href={`tel:${COMPANY_INFO.phone}`}
-              className="bg-mocha-950 hover:bg-mocha-850 border border-gold/40 text-gold-100 px-6 py-3 rounded-md text-xs uppercase tracking-wider font-semibold transition-colors"
+              className="min-h-[44px] w-full sm:w-auto flex items-center justify-center bg-mocha-950 hover:bg-mocha-850 border border-gold/40 text-gold-100 px-6 py-3 rounded-md text-xs uppercase tracking-wider font-semibold transition-colors"
             >
               Call {COMPANY_INFO.phoneFormatted}
             </a>

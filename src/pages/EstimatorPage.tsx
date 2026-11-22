@@ -21,7 +21,7 @@ export const EstimatorPage: React.FC = () => {
             Interactive Roof Investment Estimator
           </h1>
 
-          <p className="text-sm sm:text-base text-stone-300 leading-relaxed font-sans">
+          <p className="text-base sm:text-lg text-stone-300 leading-relaxed font-sans">
             Calculate preliminary planning budget ranges for standing seam metal, architectural copper, natural slate, and GAF certified residential shingle roofing systems across Greater Houston.
           </p>
         </div>
